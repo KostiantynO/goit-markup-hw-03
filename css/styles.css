@@ -1,0 +1,95 @@
+:root {
+  --decovar-font-blue: "Oleo Script";
+  --decovar-font-dark: "Raleway";
+}
+
+/* Позиционирование */
+.header {
+  margin: 0;
+}
+.list {
+}
+
+::marker {
+}
+
+.list-item {
+  margin-left: 48px;
+  margin-bottom: 21px;
+}
+
+/* Блочная модель */
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Типографика */
+
+/* WebStudio */
+.webstudio-blue {
+  position: absolute;
+  width: 145px;
+  height: 31px;
+  left: 215px;
+  top: 24px;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  /* identical to box height */
+
+  letter-spacing: 0.03em;
+
+  color: #2196f3;
+}
+
+/* Отображение */
+
+body {
+  background-color: #fff;
+  color: #212121;
+}
+
+.selected,
+.link:focus,
+.link:hover,
+.link:active,
+.button:focus,
+.button:hover,
+.button:active {
+  color: #2196f3;
+}
+
+.link {
+  color: #212121;
+}
+
+/* Прочее */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
