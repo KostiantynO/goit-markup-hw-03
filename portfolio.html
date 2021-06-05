@@ -1,199 +1,305 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html class="page-html" lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta
+      name="description"
+      content="Portfolio - showcases WebStudio's works with filters by projects type. The site is a Training project of the GoIT student participating in FullStack Dev online course"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Портфолио</title>
-  </head>
-  <body>
-    <!-- Header Updated on 15/05/2021 21:06 -->
-    <header class="header">
-      <nav class="nav">
-        <a href="./index.html" rel="noopener noreferrer">
-          <span class="webstudio-blue" lang="en">Web</span>
-          <span class="webstudio-dark" lang="en">Studio</span>
-        </a>
-        <ul class="list container">
-          <li class="list-item">
-            <a class="link" href="./index.html" rel="noopener noreferrer">Студия</a>
-          </li>
-          <li class="list-item">
-            <a class="link selected" href="./portfolio.html" rel="noopener noreferrer">Портфолио</a>
-          </li>
-          <li class="list-item">
-            <a class="link" href="#">Контакты</a>
-          </li>
-        </ul>
-      </nav>
 
-      <ul class="list container">
-        <li class="list-item">
-          <a class="header-email" href="mailto:info@devstudio.com">info@devstudio.com</a>
-        </li>
-        <li class="list-item">
-          <a class="header-tel" href="tel:+380961111111">+38 096 111 11 11</a>
-        </li>
-      </ul>
+    <title>Портфолио</title>
+
+    <!-- Critical CSS -->
+    <style>
+      body {
+        background-color: #333333;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./css/modern-normalize.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body class="portfolio-body dark-side" data-choose-side>
+    <!-- Шапка сайта 01/Jun/2021 17:32 -->
+    <header class="page-header">
+      <div class="header-container">
+        <nav class="header-nav">
+          <div class="logo-container">
+            <a class="logo links" href="./" hreflang="ru">
+              <span class="webstudio accent" lang="en">Web</span
+              ><span class="webstudio black" lang="en">Studio</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu nobullets">
+            <li class="nav-menu-item">
+              <a class="nav-link links" href="./index.html" hreflang="ru">Студия</a>
+            </li>
+            <li class="nav-menu-item">
+              <a class="nav-link links current" href="./portfolio.html" hreflang="ru">Портфолио</a>
+            </li>
+            <li class="nav-menu-item">
+              <a class="nav-link links" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-contacts-container">
+          <ul class="header-contacts-list nobullets">
+            <li class="header-contacts-list-item">
+              <a class="header-contacts links" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li class="header-contacts-list-item">
+              <a class="header-contacts links" href="tel:+380961111111">+38 096 111 11 11</a>
+            </li>
+          </ul>
+
+          <div class="dark-side-container">
+            <button
+              class="light-side-btn btn"
+              type="button"
+              title="Перейти на Светлую сторону Силы"
+              data-light-side
+            >
+              <span class="dark-side-symbol">🌞</span>
+            </button>
+
+            <button
+              class="dark-side-btn btn is-hidden"
+              type="button"
+              title="Перейти на Темную сторону Силы"
+              data-dark-side
+            >
+              <span class="dark-side-symbol">🌜</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
-      <section class="filters section">
-        <div class="container">
-          <h2 class="h-2 visually-hidden">Фильтры</h2>
-          <ul class="list">
-            <li class="list-item">
-              <button class="button selected" type="button">Все</button>
-            </li>
-            <li class="list-item"><button class="button" type="button">Веб-сайты</button></li>
-            <li class="list-item"><button class="button" type="button">Приложения</button></li>
-            <li class="list-item"><button class="button" type="button">Дизайн</button></li>
-            <li class="list-item"><button class="button" type="button">Маркетинг</button></li>
-          </ul>
-        </div>
-      </section>
+      <div class="main-container">
+        <!-- Портфолио -->
+        <section class="portfolio section">
+          <h1 class="is-hidden">Примеры работ</h1>
 
-      <section class="portfolio section">
-        <div class="container">
-          <h2>Портфолио</h2>
-          <ul class="list">
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-1.jpg"
-                alt="Веб-страница о команде веб-сайта на экране MacBook Pro"
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Технокряк</h3>
-              <p>Веб-сайт</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-2.jpg"
-                alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Постер <span lang="en">New Orlean vs Golden Star</span></h3>
-              <p>Дизайн</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-3.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Ресторан <span lang="en">Seafood</span></h3>
-              <p>Приложение</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-4.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Проект <span lang="en">Prime</span></h3>
-              <p>Маркетинг</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-5.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Проект <span lang="en">Boxes</span></h3>
-              <p>Приложение</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-6.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3"><span lang="en">Inspiration has no Borders</span></h3>
-              <p>Веб-сайт</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-7.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Издание <span lang="en">Limited Edition</span></h3>
-              <p>Дизайн</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-8.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3">Проект <span lang="en">LAB</span></h3>
-              <p>Маркетинг</p>
-            </li>
-            <li class="list-item">
-              <img
-                class="image"
-                src="./images/squooshed/portfolio/project-9.jpg"
-                alt=""
-                width="370"
-                height="294"
-              />
-              <h3 class="h-3"><span lang="en">Growing Business</span></h3>
-              <p>Приложение</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <!-- Фильтры-кнопки -->
+          <div class="portfolio-filters">
+            <h2 class="is-hidden">Фильтры-кнопки по типу проекта</h2>
+            <ul class="portfolio-filters-list nobullets">
+              <li class="portfolio-filters-list-item">
+                <button class="btn btn--primary" type="button">Все</button>
+              </li>
+              <li class="portfolio-filters-list-item">
+                <button class="portfolio-filters-btn btn" type="button">Веб-сайты</button>
+              </li>
+              <li class="portfolio-filters-list-item">
+                <button class="portfolio-filters-btn btn" type="button">Приложения</button>
+              </li>
+              <li class="portfolio-filters-list-item">
+                <button class="portfolio-filters-btn btn" type="button">Дизайн</button>
+              </li>
+              <li class="portfolio-filters-list-item">
+                <button class="portfolio-filters-btn btn" type="button">Маркетинг</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Список карточек проектов -->
+          <div class="portfolio-projects">
+            <h2 class="is-hidden">Список карточек проектов</h2>
+            <ul class="portfolio-list nobullets">
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-1.jpg"
+                  alt="Веб-страница о команде веб-сайта на экране MacBook Pro"
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">Технокряк</h3>
+                  <p class="portfolio-project-type">Веб-сайт</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-2.jpg"
+                  alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">
+                    Постер <span lang="en">New Orlean vs Golden Star</span>
+                  </h3>
+                  <p class="portfolio-project-type">Дизайн</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-3.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">Ресторан <span lang="en">Seafood</span></h3>
+                  <p class="portfolio-project-type">Приложение</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-4.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">Проект <span lang="en">Prime</span></h3>
+                  <p class="portfolio-project-type">Маркетинг</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-5.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">Проект <span lang="en">Boxes</span></h3>
+                  <p class="portfolio-project-type">Приложение</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-6.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">
+                    <span lang="en">Inspiration has no Borders</span>
+                  </h3>
+                  <p class="portfolio-project-type">Веб-сайт</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-7.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">
+                    Издание <span lang="en">Limited Edition</span>
+                  </h3>
+                  <p class="portfolio-project-type">Дизайн</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-8.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name">Проект <span lang="en">LAB</span></h3>
+                  <p class="portfolio-project-type">Маркетинг</p>
+                </div>
+              </li>
+              <li class="portfolio-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/portfolio/project-9.jpg"
+                  alt=""
+                  width="370"
+                  height="294"
+                />
+                <div class="project-card-info-wrapper">
+                  <h3 class="portfolio-project-name"><span lang="en">Growing Business</span></h3>
+                  <p class="portfolio-project-type">Приложение</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <!-- Footer Updated on 16/05/2021 00:17 -->
-    <footer class="footer">
-      <a href="./index.html" rel="noopener noreferrer">
-        <span class="logo-font-blue" lang="en">Web</span>
-        <span class="logo-font-dark" lang="en">Studio</span>
-      </a>
+    <!-- Footer Updated on 30/05/2021 23:09 -->
+    <footer class="page-footer">
+      <div class="footer-container">
+        <div class="footer-address-wrapper">
+          <a class="logo links" href="./index.html">
+            <span class="webstudio accent" lang="en">Web</span
+            ><span class="webstudio white" lang="en">Studio</span>
+          </a>
+          <address class="footer-address">
+            <ul class="footer-address-list nobullets">
+              <li class="footer-address-list-item">
+                <a
+                  class="footer-map-pointer secondary-text-font links"
+                  href="https://goo.gl/maps/HiSWEAjoAeCsFwUL7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >г. Киев, пр-т Леси Украинки, 26</a
+                >
+              </li>
+              <li class="footer-address-list-item">
+                <a class="footer-contacts secondary-text-font links" href="mailto:info@example.com"
+                  >info@example.com</a
+                >
+              </li>
+              <li class="footer-address-list-item">
+                <a class="footer-contacts secondary-text-font links" href="tel:+380991111111"
+                  >+38 099 111 11 11</a
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
 
-      <address class="address">
-        <ul>
-          <li>
-            <a
-              class="link"
-              href="https://goo.gl/maps/HiSWEAjoAeCsFwUL7"
-              target="_blank"
-              rel="noopener noreferrer"
-              >г. Киев, пр-т Леси Украинки, 26</a
+        <ul class="footer-social-list nobullets">
+          <li class="footer-social-list-item">
+            <a class="footer-social-link links" href="" aria-label="Ссылка на Facebook">Facebook</a>
+          </li>
+          <li class="footer-social-list-item">
+            <a class="footer-social-link links" href="" aria-label="Ссылка на Twitter">Twitter</a>
+          </li>
+          <li class="footer-social-list-item">
+            <a class="footer-social-link links" href="" aria-label="Ссылка на Instagram"
+              >Instagram</a
             >
           </li>
-          <li>
-            <a class="footer-email" href="mailto:info@example.com">info@example.com</a>
-          </li>
-          <li>
-            <a class="footer-email" href="tel:+380991111111">+38 099 111 11 11</a>
+          <li class="footer-social-list-item">
+            <a class="footer-social-link links" href="" aria-label="Ссылка на LinkedIn">LinkedIn</a>
           </li>
         </ul>
-      </address>
+      </div>
     </footer>
+
+    <!-- Скрипт Перехода на Темную сторону Силы -->
+    <script src="./js/dark-side.js"></script>
   </body>
 </html>
