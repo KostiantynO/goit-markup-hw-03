@@ -16,21 +16,14 @@
 
     <title>Студия</title>
 
-    <!-- Critical CSS -->
-    <style>
-      body {
-        background-color: #333333;
-      }
-    </style>
-
     <link rel="stylesheet" href="./css/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
-  <body class="studio-body dark-side" data-choose-side>
+  <body class="studio-body">
     <!-- Шапка сайта 01/Jun/2021 17:32 -->
     <header class="page-header">
-      <div class="header-container">
+      <div class="header-container container">
         <nav class="header-nav">
           <div class="logo-container">
             <a class="logo links" href="./" hreflang="ru">
@@ -41,7 +34,9 @@
 
           <ul class="nav-menu nobullets">
             <li class="nav-menu-item">
-              <a class="nav-link links current" href="./index.html" hreflang="ru">Студия</a>
+              <a class="nav-link links" href="./index.html" hreflang="ru" aria-current="page"
+                >Студия</a
+              >
             </li>
             <li class="nav-menu-item">
               <a class="nav-link links" href="./portfolio.html" hreflang="ru">Портфолио</a>
@@ -62,119 +57,96 @@
               <a class="header-contacts links" href="tel:+380961111111">+38 096 111 11 11</a>
             </li>
           </ul>
-
-          <div class="dark-side-container">
-            <button
-              class="light-side-btn btn"
-              type="button"
-              title="Перейти на Светлую сторону Силы"
-              data-light-side
-            >
-              <span class="dark-side-symbol">🌞</span>
-            </button>
-
-            <button
-              class="dark-side-btn btn is-hidden"
-              type="button"
-              title="Перейти на Темную сторону Силы"
-              data-dark-side
-            >
-              <span class="dark-side-symbol">🌜</span>
-            </button>
-          </div>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- Герой -->
-      <div class="main-container">
+      <div class="main-container container">
+        <!-- Герой -->
         <section class="hero section">
           <div class="hero-container">
             <h1 class="hero-title">
               Эффективные решения <br />
               для вашего бизнеса
             </h1>
-            <div class="hero-btn-container">
-              <button class="hero-btn-absolute btn btn--primary" type="button" data-modal-open>
-                Заказать услугу
-              </button>
 
-              <p class="hero-btn-absolute-text">Заказать услугу</p>
-
-              <button class="hero-btn-relative btn btn--primary" type="button" data-modal-open>
-                Заказать услугу
-              </button>
-            </div>
+            <button class="hero-btn btn btn--primary" type="button" data-modal-open>
+              Заказать услугу
+            </button>
           </div>
         </section>
 
         <!-- "Особенности", со скрытым заголовком h2 -->
         <section class="features section">
-          <h2 class="is-hidden">Особенности</h2>
-
-          <ul class="features-list nobullets">
-            <li class="features-list-item">
-              <h3 class="features-heading">Внимание к деталям</h3>
-              <p class="features-paragraph secondary-text-font">
-                Идейные соображения, а также начало повседневной работы по формированию позиции.
-              </p>
-            </li>
-            <li class="features-list-item">
-              <h3 class="features-heading">Пунктуальность</h3>
-              <p class="features-paragraph secondary-text-font">
-                Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
-              </p>
-            </li>
-            <li class="features-list-item">
-              <h3 class="features-heading">Планирование</h3>
-              <p class="features-paragraph secondary-text-font">
-                Равным образом консультация с широким активом в значительной степени обуславливает.
-              </p>
-            </li>
-            <li class="features-list-item">
-              <h3 class="features-heading">Современные технологии</h3>
-              <p class="features-paragraph secondary-text-font">
-                Значимость этих проблем настолько очевидна, что реализация плановых заданий.
-              </p>
-            </li>
-          </ul>
+          <div class="features-container">
+            <h2 class="is-hidden">Особенности</h2>
+            <ul class="features-list nobullets">
+              <li class="features-list-item">
+                <h3 class="features-heading">Внимание к деталям</h3>
+                <p class="features-paragraph secondary-text-font">
+                  Идейные соображения, а также начало повседневной работы по формированию позиции.
+                </p>
+              </li>
+              <li class="features-list-item">
+                <h3 class="features-heading">Пунктуальность</h3>
+                <p class="features-paragraph secondary-text-font">
+                  Задача организации, в особенности же рамки и место обучения кадров влечет за
+                  собой.
+                </p>
+              </li>
+              <li class="features-list-item">
+                <h3 class="features-heading">Планирование</h3>
+                <p class="features-paragraph secondary-text-font">
+                  Равным образом консультация с широким активом в значительной степени
+                  обуславливает.
+                </p>
+              </li>
+              <li class="features-list-item">
+                <h3 class="features-heading">Современные технологии</h3>
+                <p class="features-paragraph secondary-text-font">
+                  Значимость этих проблем настолько очевидна, что реализация плановых заданий.
+                </p>
+              </li>
+            </ul>
+          </div>
         </section>
 
         <!-- Чем мы занимаемся -->
         <section class="activities section">
-          <h2 class="section-title activities-title">Чем мы занимаемся</h2>
-
-          <!-- Сжатые *.jpg активностей -->
-          <ul class="activities-list nobullets">
-            <li class="activities-list-item">
-              <img
-                class="image"
-                src="./images/squooshed/activities/activity-1.jpg"
-                alt="Разработчик делает разметку веб-страницы за ноутбуком"
-                width="370"
-                height="294"
-              />
-            </li>
-            <li class="activities-list-item">
-              <img
-                class="image"
-                src="./images/squooshed/activities/activity-2.jpg"
-                alt="Дизайнер сверяет макет UI интерфейса со смартфоном"
-                width="370"
-                height="294"
-              />
-            </li>
-            <li class="activities-list-item">
-              <img
-                class="image"
-                src="./images/squooshed/activities/activity-3.jpg"
-                alt="Дизайнер выбирает цвет из палитры на планшете"
-                width="370"
-                height="294"
-              />
-            </li>
-          </ul>
+          <div class="activities-container">
+            <h2 class="section-title activities-title">Чем мы занимаемся</h2>
+            <!-- Сжатые *.jpg активностей -->
+            <ul class="activities-list nobullets">
+              <li class="activities-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/activities/activity-1.jpg"
+                  alt="Разработчик делает разметку веб-страницы за ноутбуком"
+                  width="370"
+                  height="294"
+                />
+              </li>
+              <li class="activities-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/activities/activity-2.jpg"
+                  alt="Дизайнер сверяет макет UI интерфейса со смартфоном"
+                  width="370"
+                  height="294"
+                />
+              </li>
+              <li class="activities-list-item">
+                <img
+                  class="image"
+                  src="./images/squooshed/activities/activity-3.jpg"
+                  alt="Дизайнер выбирает цвет из палитры на планшете"
+                  width="370"
+                  height="294"
+                />
+              </li>
+            </ul>
+          </div>
         </section>
 
         <!-- Наша команда -->
@@ -186,52 +158,52 @@
             <li class="designers-list-item">
               <div class="designers-info-container">
                 <img
-                  class="image"
+                  class="image designers-photo"
                   src="./images/squooshed/team/designer-1.jpg"
                   alt="Молодой дизайнер в очках, с приветливой улыбкой, со стриженной бородой и в коричневой рубашке"
                   width="270"
                   height="260"
                 />
-                <h3 class="designers-name primary-text">Игорь Демьяненко</h3>
+                <h3 class="designers-name primary-text-font">Игорь Демьяненко</h3>
                 <p class="designers-role" lang="en">Product Designer</p>
               </div>
             </li>
             <li class="designers-list-item">
               <div class="designers-info-container">
                 <img
-                  class="image"
+                  class="image designers-photo"
                   src="./images/squooshed/team/designer-2.jpg"
                   alt="Молодая улыбающаяся разработчица в очках и в черном деловом костюме"
                   width="270"
                   height="260"
                 />
-                <h3 class="designers-name primary-text">Ольга Репина</h3>
+                <h3 class="designers-name primary-text-font">Ольга Репина</h3>
                 <p class="designers-role" lang="en">Frontend Developer</p>
               </div>
             </li>
             <li class="designers-list-item">
               <div class="designers-info-container">
                 <img
-                  class="image"
+                  class="image designers-photo"
                   src="./images/squooshed/team/designer-3.jpg"
                   alt="Молодой маркетолог с уверенной улыбкой, легкой бородой и в светло-синей рубашке"
                   width="270"
                   height="260"
                 />
-                <h3 class="designers-name primary-text">Николай Тарасов</h3>
+                <h3 class="designers-name primary-text-font">Николай Тарасов</h3>
                 <p class="designers-role" lang="en">Marketing</p>
               </div>
             </li>
             <li class="designers-list-item">
               <div class="designers-info-container">
                 <img
-                  class="image"
+                  class="image designers-photo"
                   src="./images/squooshed/team/designer-4.jpg"
                   alt="Молодой дизайнер в очках, со сдержанной уверенной ухмылкой, бородат, в черной футболке"
                   width="270"
                   height="260"
                 />
-                <h3 class="designers-name primary-text">Михаил Ермаков</h3>
+                <h3 class="designers-name primary-text-font">Михаил Ермаков</h3>
                 <p class="designers-role" lang="en">UI Designer</p>
               </div>
             </li>
@@ -240,9 +212,9 @@
       </div>
     </main>
 
-    <!-- Footer Updated on 30/05/2021 23:09 -->
+    <!-- Footer Updated on 2021-Jun-05 14:53 -->
     <footer class="page-footer">
-      <div class="footer-container">
+      <div class="footer-container container">
         <div class="footer-address-wrapper">
           <a class="logo links" href="./index.html">
             <span class="webstudio accent" lang="en">Web</span
@@ -273,154 +245,175 @@
           </address>
         </div>
 
-        <ul class="footer-social-list nobullets">
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на Facebook">Facebook</a>
-          </li>
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на Twitter">Twitter</a>
-          </li>
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на Instagram"
-              >Instagram</a
-            >
-          </li>
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+        <div class="footer-social-container">
+          <ul class="footer-social-list nobullets">
+            <li class="footer-social-list-item">
+              <a
+                class="footer-social-link links secondary-text-font footer-contacts"
+                href=""
+                aria-label="Ссылка на Facebook"
+                >Facebook</a
+              >
+            </li>
+            <li class="footer-social-list-item">
+              <a
+                class="footer-social-link links secondary-text-font footer-contacts"
+                href=""
+                aria-label="Ссылка на Twitter"
+                >Twitter</a
+              >
+            </li>
+            <li class="footer-social-list-item">
+              <a
+                class="footer-social-link links secondary-text-font footer-contacts"
+                href=""
+                aria-label="Ссылка на Instagram"
+                >Instagram</a
+              >
+            </li>
+            <li class="footer-social-list-item">
+              <a
+                class="footer-social-link links secondary-text-font footer-contacts"
+                href=""
+                aria-label="Ссылка на LinkedIn"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
 
     <!-- Модальное окно -->
-    <!-- <div class="backdrop is-hidden" title="modal-window" data-modal> -->
-    <!-- Форма -->
-    <!-- <form class="contact-form" action="#" method="GET">
-        <p class="modal-title primary-text">Оставьте свои данные, мы Вам перезвоним</p>
-
-        <input
-          class="contact-form-input"
-          placeholder="Your name*"
-          type="text"
-          name="user-name"
-          id="input-user-name"
-          required
-          minlength="2"
-        />
-
-        <input
-          class="contact-form-input"
-          placeholder="Your email*"
-          type="email"
-          name="user-email"
-          id="input-user-email"
-          required
-        />
-
-        <input
-          class="contact-form-input"
-          placeholder="Your phone*"
-          type="tel"
-          name="user-phone"
-          id="input-user-phone"
-          required
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-          title="098-111-11-11"
-        />
-
-        <fieldset>
-          <legend>Your age</legend>
-          <input
-            class="contact-form-radio"
-            id="user-age-20"
-            name="user-age"
-            type="radio"
-            value="20"
-            checked
-          />
-          <label for="user-age-20" class="form-input-label">20</label>
+    <div class="backdrop is-hidden" title="modal-window" data-modal>
+      <div class="modal">
+        <div class="modal-close-btn-container">
+          <button class="modal-close-btn btn btn--secondary" type="button" data-modal-close>
+            X
+          </button>
+        </div>
+        <!-- Форма -->
+        <form class="contact-form" action="#" method="GET">
+          <p class="modal-title primary-text-font">Оставьте свои данные, мы Вам перезвоним</p>
 
           <input
-            class="contact-form-radio"
-            id="user-age-30"
-            name="user-age"
-            type="radio"
-            value="30"
+            class="contact-form-input"
+            placeholder="Your name*"
+            type="text"
+            name="user-name"
+            id="input-user-name"
+            required
+            minlength="2"
           />
-          <label for="user-age-30" class="form-input-label">30</label>
 
           <input
-            class="contact-form-radio"
-            id="user-age-40"
-            name="user-age"
-            type="radio"
-            value="40"
+            class="contact-form-input"
+            placeholder="Your email*"
+            type="email"
+            name="user-email"
+            id="input-user-email"
+            required
           />
-          <label for="user-age-40" class="form-input-label">40</label>
-        </fieldset>
 
-        <fieldset>
-          <legend>Your Hobby</legend>
-          <label class="form-checkbox-label"
-            ><input
-              class="contact-form-checkbox"
-              name="user-hobby"
-              type="checkbox"
-              value="football"
+          <input
+            class="contact-form-input"
+            placeholder="Your phone*"
+            type="tel"
+            name="user-phone"
+            id="input-user-phone"
+            required
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            title="098-111-11-11"
+          />
+
+          <fieldset>
+            <legend>Your age</legend>
+            <input
+              class="contact-form-radio"
+              id="user-age-20"
+              name="user-age"
+              type="radio"
+              value="20"
               checked
-            />football</label
-          >
+            />
+            <label for="user-age-20" class="form-input-label">20</label>
 
-          <label class="form-checkbox-label"
-            ><input
-              class="contact-form-checkbox"
-              name="user-hobby"
-              type="checkbox"
-              value=" boxing"
-              checked
-            />boxing</label
-          >
+            <input
+              class="contact-form-radio"
+              id="user-age-30"
+              name="user-age"
+              type="radio"
+              value="30"
+            />
+            <label for="user-age-30" class="form-input-label">30</label>
 
-          <label class="form-checkbox-label"
-            ><input
-              class="contact-form-checkbox"
-              name="user-hobby"
-              type="checkbox"
-              value="  tennis"
-            />tennis</label
-          >
-        </fieldset>
+            <input
+              class="contact-form-radio"
+              id="user-age-40"
+              name="user-age"
+              type="radio"
+              value="40"
+            />
+            <label for="user-age-40" class="form-input-label">40</label>
+          </fieldset>
 
-        <textarea
-          class="contact-form-message"
-          name="user-message"
-          id="contact-form-message-id"
-          placeholder="Your message"
-        >
-Write to us :)</textarea
-        >
+          <fieldset>
+            <legend>Your Hobby</legend>
+            <label class="form-checkbox-label"
+              ><input
+                class="contact-form-checkbox"
+                name="user-hobby"
+                type="checkbox"
+                value="football"
+                checked
+              />football</label
+            >
 
-        <label class="form-select-label"
-          ><select name="user-city" id="contact-form-select">
-            <option value="Kyiv">Kyiv</option>
-            <option value="Kharkov">Kharkov</option>
-            <option value="Odessa" selected>Odessa</option>
-          </select></label
-        >
+            <label class="form-checkbox-label"
+              ><input
+                class="contact-form-checkbox"
+                name="user-hobby"
+                type="checkbox"
+                value=" boxing"
+                checked
+              />boxing</label
+            >
 
-        <button class="contact-form-btn btn" type="submit">Submit</button>
-        <button class="contact-form-btn btn" type="reset">Clear</button>
-      </form> -->
+            <label class="form-checkbox-label"
+              ><input
+                class="contact-form-checkbox"
+                name="user-hobby"
+                type="checkbox"
+                value="  tennis"
+              />tennis</label
+            >
+          </fieldset>
 
-    <!-- <div class="modal">
-        <button class="modal-close-btn btn" type="button" data-modal-close>X</button>
+          <textarea
+            class="contact-form-message"
+            name="user-message"
+            id="contact-form-message-id"
+            placeholder="Your message"
+          ></textarea>
+
+          <div class="form-select-container">
+            <label class="form-select-label"
+              ><select name="user-city" id="contact-form-select">
+                <option value="Kyiv">Kyiv</option>
+                <option value="Kharkov">Kharkov</option>
+                <option value="Odessa" selected>Odessa</option>
+              </select></label
+            >
+          </div>
+          <div class="form-btn-container">
+            <button class="contact-form-btn btn btn--secondary" type="submit">Submit</button>
+            <button class="contact-form-btn btn btn--secondary" type="reset">Clear</button>
+          </div>
+        </form>
       </div>
-    </div> -->
+    </div>
 
     <!-- Скрипт модального окна -->
-    <!-- <script src="./js/modal.js"></script> -->
-
-    <!-- Скрипт Перехода на Темную сторону Силы -->
-    <script src="./js/dark-side.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

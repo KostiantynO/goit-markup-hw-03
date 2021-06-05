@@ -16,18 +16,11 @@
 
     <title>Портфолио</title>
 
-    <!-- Critical CSS -->
-    <style>
-      body {
-        background-color: #333333;
-      }
-    </style>
-
     <link rel="stylesheet" href="./css/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
-  <body class="portfolio-body dark-side" data-choose-side>
+  <body class="portfolio-body">
     <!-- Шапка сайта 01/Jun/2021 17:32 -->
     <header class="page-header">
       <div class="header-container">
@@ -44,7 +37,9 @@
               <a class="nav-link links" href="./index.html" hreflang="ru">Студия</a>
             </li>
             <li class="nav-menu-item">
-              <a class="nav-link links current" href="./portfolio.html" hreflang="ru">Портфолио</a>
+              <a class="nav-link links" href="./portfolio.html" hreflang="ru" aria-current="page"
+                >Портфолио</a
+              >
             </li>
             <li class="nav-menu-item">
               <a class="nav-link links" href="#">Контакты</a>
@@ -62,26 +57,6 @@
               <a class="header-contacts links" href="tel:+380961111111">+38 096 111 11 11</a>
             </li>
           </ul>
-
-          <div class="dark-side-container">
-            <button
-              class="light-side-btn btn"
-              type="button"
-              title="Перейти на Светлую сторону Силы"
-              data-light-side
-            >
-              <span class="dark-side-symbol">🌞</span>
-            </button>
-
-            <button
-              class="dark-side-btn btn is-hidden"
-              type="button"
-              title="Перейти на Темную сторону Силы"
-              data-dark-side
-            >
-              <span class="dark-side-symbol">🌜</span>
-            </button>
-          </div>
         </div>
       </div>
     </header>
@@ -100,16 +75,16 @@
                 <button class="btn btn--primary" type="button">Все</button>
               </li>
               <li class="portfolio-filters-list-item">
-                <button class="portfolio-filters-btn btn" type="button">Веб-сайты</button>
+                <button class="btn btn--secondary" type="button">Веб-сайты</button>
               </li>
               <li class="portfolio-filters-list-item">
-                <button class="portfolio-filters-btn btn" type="button">Приложения</button>
+                <button class="btn" type="button">Приложения</button>
               </li>
               <li class="portfolio-filters-list-item">
-                <button class="portfolio-filters-btn btn" type="button">Дизайн</button>
+                <button class="btn btn--secondary" type="button">Дизайн</button>
               </li>
               <li class="portfolio-filters-list-item">
-                <button class="portfolio-filters-btn btn" type="button">Маркетинг</button>
+                <button class="btn btn--secondary" type="button">Маркетинг</button>
               </li>
             </ul>
           </div>
@@ -126,7 +101,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">Технокряк</h3>
                   <p class="portfolio-project-type">Веб-сайт</p>
                 </div>
@@ -139,7 +114,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">
                     Постер <span lang="en">New Orlean vs Golden Star</span>
                   </h3>
@@ -154,7 +129,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">Ресторан <span lang="en">Seafood</span></h3>
                   <p class="portfolio-project-type">Приложение</p>
                 </div>
@@ -167,7 +142,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">Проект <span lang="en">Prime</span></h3>
                   <p class="portfolio-project-type">Маркетинг</p>
                 </div>
@@ -180,7 +155,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">Проект <span lang="en">Boxes</span></h3>
                   <p class="portfolio-project-type">Приложение</p>
                 </div>
@@ -193,7 +168,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">
                     <span lang="en">Inspiration has no Borders</span>
                   </h3>
@@ -208,7 +183,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">
                     Издание <span lang="en">Limited Edition</span>
                   </h3>
@@ -223,7 +198,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name">Проект <span lang="en">LAB</span></h3>
                   <p class="portfolio-project-type">Маркетинг</p>
                 </div>
@@ -236,7 +211,7 @@
                   width="370"
                   height="294"
                 />
-                <div class="project-card-info-wrapper">
+                <div class="project-title">
                   <h3 class="portfolio-project-name"><span lang="en">Growing Business</span></h3>
                   <p class="portfolio-project-type">Приложение</p>
                 </div>
@@ -247,7 +222,7 @@
       </div>
     </main>
 
-    <!-- Footer Updated on 30/05/2021 23:09 -->
+    <!-- Footer Updated on 2021-Jun-05 14:53 -->
     <footer class="page-footer">
       <div class="footer-container">
         <div class="footer-address-wrapper">
@@ -280,26 +255,29 @@
           </address>
         </div>
 
-        <ul class="footer-social-list nobullets">
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на Facebook">Facebook</a>
-          </li>
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на Twitter">Twitter</a>
-          </li>
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на Instagram"
-              >Instagram</a
-            >
-          </li>
-          <li class="footer-social-list-item">
-            <a class="footer-social-link links" href="" aria-label="Ссылка на LinkedIn">LinkedIn</a>
-          </li>
-        </ul>
+        <div class="footer-social-container">
+          <ul class="footer-social-list nobullets">
+            <li class="footer-social-list-item">
+              <a class="footer-social-link links" href="" aria-label="Ссылка на Facebook"
+                >Facebook</a
+              >
+            </li>
+            <li class="footer-social-list-item">
+              <a class="footer-social-link links" href="" aria-label="Ссылка на Twitter">Twitter</a>
+            </li>
+            <li class="footer-social-list-item">
+              <a class="footer-social-link links" href="" aria-label="Ссылка на Instagram"
+                >Instagram</a
+              >
+            </li>
+            <li class="footer-social-list-item">
+              <a class="footer-social-link links" href="" aria-label="Ссылка на LinkedIn"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
-
-    <!-- Скрипт Перехода на Темную сторону Силы -->
-    <script src="./js/dark-side.js"></script>
   </body>
 </html>
