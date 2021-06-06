@@ -1,28 +1,45 @@
 :root {
+  --max-width-body: 1600px; /* Макс. ширина страницы */
+  --min-height-header: 80px; /* Макс. высота шапки */
+  --min-height-footer: 252px; /* Макс. высота футера */
+  --max-width-portfolio-card: 370px; /* Макс. ширина карточки проекта */
+  --max-height-portfolio-card: 404px; /* Макс. высота карточки проекта */
+  --margin-right-portfolio-card: 30px; /* Горизонтальный отступ между карточками проекта */
+  --margin-bottom-portfolio-card: 30px; /* Вертикальный отступ между карточками проекта */
+
   /* Палитра */
-  --color-text-primary: #212121; /* Основной цвет текста #212121 (nav, section-title h-2, features-heading h-3, designer-name, filters-btn, project-name ) */
+  --color-text-primary: #212121; /* Основной цвет текста #212121 (nav-link, h2, h3, filters-btn) */
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
   --color-accent: #2196f3; /* Акцент #2196F3 */
   --color-bg-hero: #2f303a;
-
   --color-bg-section-grey: #f5f4fa;
-
+  --color-bg-project-card: #eeeeee;
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-filters-btn-box-shadow-middle-008: rgba(0, 0, 0, 0.08);
-  --color-filters-btn-box-shadow-middle-010: rgba(0, 0, 0, 0.1);
-  --color-filters-btn-box-shadow-middle-012: rgba(0, 0, 0, 0.12);
-  --color-designers-list-item-box-shadow-middle-012: rgba(0, 0, 0, 0.12);
-  --color-designers-list-item-box-shadow-middle-014: rgba(0, 0, 0, 0.14);
-  --color-designers-list-item-box-shadow-middle-020: rgba(0, 0, 0, 0.2);
-  --color-hero-btn-box-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Тень для Главной кнопки (статическая) и Вторичной кнопки (динамическая - по наведению/при фокусе) */
+  --color-filters-btn-box-shadow-light: rgba(0, 0, 0, 0.08);
+  --color-filters-btn-box-shadow-darker: rgba(0, 0, 0, 0.1);
+  --color-filters-btn-box-shadow-darkest: rgba(0, 0, 0, 0.12);
+
+  /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
+  --color-designers-card-shadow-light: rgba(0, 0, 0, 0.12);
+  --color-designers-card-shadow-darker: rgba(0, 0, 0, 0.14);
+  --color-designers-card-shadow-darkest: rgba(0, 0, 0, 0.2);
+
+  /* Тень для Кнопки-героя (статическая) */
+  --color-hero-btn-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Цвет Кнопки-героя при фокусе */
   --color-hero-btn-hover: #188ce8;
-  --color-bg-project-card: #eeeeee;
+
   --color-header-decoration-line: #ececec;
   --color-footer-contacts: rgba(255, 255, 255, 0.6);
 }
 
-/* || ========== START "ОБЩИЕ НАСТРОЙКИ" ========== */
+/* ------------------------------------------------------ */
+/* || ------------- START "ОБЩИЕ НАСТРОЙКИ" ------------- */
+/* ------------------------------------------------------ */
 
 /* START "Обнуление" */
 body,
@@ -48,19 +65,25 @@ li,
 /* END "Обнуление" */
 
 /* Главная */
+
 body {
   font-family: Roboto;
-  width: 1600px;
-  height: 2349px;
   color: var(--color-text-primary);
   background-color: var(--color-white);
+  max-width: var(--max-width-body);
   margin: 0 auto;
 }
 
+/* .studio-body {
+  max-height: 2349px;
+}
+.portfolio-body {
+  max-height: 1880px;
+} */
+
 .container {
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: 1200px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -77,8 +100,8 @@ body {
   font-size: 36px;
   text-align: center;
   letter-spacing: 0.03em;
-  /* Inherits from the body font-family: Roboto; */
-  /* Inherits from the browser font-weight: 700; font-style: normal; */
+  /* Наследует от body font-family: Roboto; */
+  /* Наследует от браузера font-weight: 700; font-style: normal; */
 
   color: var(--color-text-primary); /* Primary text color #212121 */
 }
@@ -112,44 +135,50 @@ body {
   cursor: pointer;
 }
 
-/* Главная кнопка: Цвет - белый, заливка - цвет акцента */
+/* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
 .btn--primary {
-  color: var(--color-white);
   background-color: var(--color-accent); /* Акцент #2196F3 */
+  color: var(--color-white); /* Белый #FFFFFF */
+
+  /* shadow-middle */
+  box-shadow: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
+    0 1px 2px var(--color-filters-btn-box-shadow-light),
+    0 2px 2px var(--color-filters-btn-box-shadow-darkest);
 }
 
-/* Вторичная кнопка: Белая заливка, темно-серый цвет. */
+/* Вторичная кнопка: Фон - серый #f5f4fa,  цвет - темный #212121, + тень динамическая по ховеру */
 .btn--secondary {
-  color: var(--color-text-primary);
   background-color: var(--color-bg-section-grey);
+  color: var(--color-text-primary);
 }
+/* ------------------------------------------------------ */
+/* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
+/* ------------------------------------------------------ */
 
-/* || ========== END "ОБЩИЕ НАСТРОЙКИ" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "ШАПКА САЙТА" ========== */
+/* ------------------------------------------------------ */
+/* || --------------- START "ШАПКА САЙТА" --------------- */
+/* ------------------------------------------------------ */
 
 /* Структура шапки:
 page-header > header-container > header-nav > (logo + nav-menu) ^ +
                                + header-contacts-container > (header-contacts-list) */
 
 .page-header {
+  max-height: var(--min-height-header);
   padding-top: 24px;
   padding-bottom: 25px;
-  min-width: 1200px;
-  max-height: 80px;
+}
+
+/* Декоративная линия под шапкой сайта */
+.page-header::after {
+  content: "";
+  position: absolute;
+  max-width: var(--max-width-body);
+  min-width: var(--max-width-body);
+  max-height: 0;
+  top: 80px;
+  /* Line */
+  border-bottom: 1px solid var(--color-header-decoration-line);
 }
 
 .header-container {
@@ -234,7 +263,11 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 /* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11 */
 .nav-link,
 .header-contacts {
+  position: relative;
   min-height: 16px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -249,6 +282,19 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .nav-link {
   color: var(--color-text-primary);
 }
+
+.nav-link[aria-current*="page"]::after {
+  content: "";
+  position: absolute;
+  top: 52px;
+  left: 0;
+  min-width: 100%;
+  min-height: 5px;
+  background-color: var(--color-accent);
+  border-radius: 21px;
+  z-index: 21;
+}
+
 /* END "Главная навигация сайта" */
 
 /*
@@ -257,11 +303,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* START "Шапка сайта - Контакты" */
 .header-contacts-container {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  min-width: 379px;
-  min-height: 31px;
+  min-width: 307px;
   /* info@devstudio.com */ /* width: 135px; */
   /* +38 096 111 11 11  */ /* width: 122px; */
 }
@@ -290,26 +332,33 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
  * "Модальное окно скрыто до момента нажатия на кнопку-героя"
 */
 .is-hidden {
-  position: absolute !important;
-  pointer-events: none !important;
+  /* MUST HAVE */
+  visibility: hidden !important; /* Не выделяется ни мышкой, ни табом. Контент прозрачный. Блок в потоке. */
+  pointer-events: none !important; /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
 
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  margin: -1px !important;
+  /* Useful */
+  clip-path: inset(100%); /* Вырезает контент. Блок в потоке. */
+  clip: rect(1px 1px 1px 1px); /* Старая функция IE6, IE7, вырезает контент. Блок в потоке. */
+  clip: rect(1px, 1px, 1px, 1px); /* Старая функция, вырезает контент. Блок в потоке. */
 
-  opacity: 0 !important;
-  visibility: hidden !important;
-  backface-visibility: hidden !important;
+  overflow: hidden !important; /* Обрезает контент. Блочный контейнер должен иметь высоту или максвысоту, или white-space: nowrap. */
+  height: 0 !important; /* Высота блока <= 1 px. Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  width: 0 !important; /* Ширина блока <= 1px. Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
 
-  font-size: 0 !important;
-  line-height: 0 !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap !important;
-  clip-path: inset(100%);
-  overflow: hidden !important;
+  font-size: 0 !important; /* Высота шрифта <= 1px.Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  line-height: 0 !important; /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+
+  /* only visual effect */
+  opacity: 0 !important; /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
+
+  /* small importance */
+  position: absolute !important; /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
+  white-space: nowrap !important; /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
+  padding: 0 !important; /* Нет внутренних отступов. Не влияет. */
+  border: 0 !important; /* Нет границы. Не влияет. */
+  margin: 0 !important; /* Нет внешних отступов. Не влияет. */
+  outline-width: 0 !important; /* Нет рамки вокруг. Не влияет. */
+  outline-offset: 0 !important; /* Нет сдвига рамки вокруг. Не влияет. */
 }
 /* END "СКРЫТЫЙ КЛАСС" */
 
@@ -325,85 +374,42 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   color: var(--color-accent); /* Акцент #2196F3 */
 }
 /* END Подсветка ссылок */
+/* ------------------------------------------------------ */
+/* || ---------------- END "ШАПКА САЙТА" ---------------- */
+/* ------------------------------------------------------ */
 
-/* Decoration Line */
-.page-header::after {
-  content: "";
-  width: 100%;
-  max-height: 0;
-  border-bottom: 1px solid var(--color-header-decoration-line);
-  display: block;
-}
-
-/* || ========== END "ШАПКА САЙТА" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "MAIN" ========== */
-
-/* .main {
-} */
-
-/* .main-container {
-} */
-
-/* || ========== END "MAIN" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "ГЕРОЙ" ========== */
-
+/* ------------------------------------------------------ */
+/* || ------------------ START "ГЕРОЙ" ------------------ */
+/* ------------------------------------------------------ */
 .hero {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 
+  min-height: 600px;
   background-color: var(--color-bg-hero); /* 2F303A */
 }
 
-.main-container > .hero {
-  padding-top: 0;
-  padding-bottom: 0;
-}
+/* .main-container > .hero {
+} */
 
 .hero-container {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-height: 600px;
+  min-width: 696px;
+  min-height: 200px;
 }
 
 /* Эффективные решения для вашего бизнеса */
-.hero-title {
+.hero-container > .hero-title {
   min-width: 696px;
   min-height: 120px;
   padding-bottom: 30px;
-  /* Inherits from the body: font-family: Roboto; */
-  /* Inherits from the browser: font-style: normal; */
+  /* Наследует от body: font-family: Roboto; */
+  /* Наследует от браузера: font-style: normal; */
   font-weight: 900;
   font-size: 44px;
   line-height: 136%; /* 60px or 136% */
@@ -414,69 +420,54 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 /* START Hero-Button */
-/* .hero-btn-container {
-} */
 
 /* Заказать услугу */
-.hero-btn {
+.hero-container > .hero-btn {
   white-space: nowrap;
-
   min-width: 200px;
   min-height: 50px;
   font-size: 16px;
 
-  /* Inherits from the body: font-family: Roboto; */
-  /* Inherits from browser: font-style: normal; font-size: 16px; */
+  /* Наследует от body: font-family: Roboto; */
+  /* Наследует от браузера: font-style: normal; font-size: 16px; */
   font-weight: 700;
   line-height: 187%; /* identical to box height 30px, or 187% */
   letter-spacing: 0.06em;
   border-radius: 4px;
 
-  box-shadow: 0 4px 4px var(--color-hero-btn-box-shadow); /* rgba(0, 0, 0, 0.15) */
+  /* Тень для Кнопки-героя (статическая) */
+  box-shadow: 0 4px 4px var(--color-hero-btn-shadow); /* rgba(0, 0, 0, 0.15) */
 }
 
 /* Hero-Button (Hover) */
-
-.hero-btn-container > .hero-btn:focus,
-.hero-btn-container > .hero-btn:hover,
-.hero-btn-container > .hero-btn:active {
+.hero-container > .hero-btn:focus,
+.hero-container > .hero-btn:hover,
+.hero-container > .hero-btn:active {
   background-color: var(--color-hero-btn-hover); /* #188ce8 */
 }
 
 /* END Hero-Button */
 
-/* || ========== END "ГЕРОЙ" ========== */
+/* ------------------------------------------------------ */
+/* || ------------------- END "ГЕРОЙ" ------------------- */
+/* ------------------------------------------------------ */
 
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "ОСОБЕННОСТИ" ========== */
-
-.main-container > .features {
-  min-width: 242px;
+/* ------------------------------------------------------ */
+/* || --------------- START "ОСОБЕННОСТИ" --------------- */
+/* ------------------------------------------------------ */
+main > .features {
   padding-bottom: 47px;
 }
 
 /* Особенности */
 .features-container {
-  height: 101px;
-  width: 1170px;
-  margin: 0 auto;
+  min-height: 101px;
 }
 
 .features-list {
   display: flex;
   justify-content: center;
+  min-width: 1170px;
   min-height: 101px;
 }
 
@@ -489,71 +480,52 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   margin-right: 30px;
 }
 
-/* Внимание к деталям */
+/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии */
 .features-heading {
-  width: 270px;
+  min-width: 270px;
   min-height: 16px;
-  font-size: 14px;
+  padding-bottom: 10px;
+
   line-height: 16px;
+  font-size: 14px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-text-primary);
-  padding-bottom: 10px;
 }
 
-/* В параграфа "Особенностей" и в футере - одинаковый шрифт, разный цвет */
+.features-paragraph {
+  min-width: 270px;
+  min-height: 75px;
+}
+
+/* В параграфе ".features-paragraph" и в ".footer-contacts" - одинаковый шрифт, разный цвет */
 
 /* Идейные соображения, а также начало повседневной работы по формированию позиции. */
-/* Задача организации, в особенности же рамки и место обучения кадров влечет за собой. */
-/* Равным образом консультация с широким активом в значительной степени обуславливает. */
-/* Значимость этих проблем настолько очевидна, что реализация плановых заданий. */
 .secondary-text-font {
   font-size: 14px;
   line-height: 171%; /* 24 px or 171% */
   letter-spacing: 0.03em;
   color: var(--color-text-secondary);
-  /* Inherits from the body: font-family: Roboto; */
-  /* Inherits from the browser: font-style: normal; font-weight: 400; */
+  /* Наследует от body: font-family: Roboto; */
+  /* Наследует от браузера: font-style: normal; font-weight: 400; */
 }
+/* ------------------------------------------------------ */
+/* || ---------------- END "ОСОБЕННОСТИ" ---------------- */
+/* ------------------------------------------------------ */
 
-.features-paragraph {
-  min-width: 270px;
-  min-height: 101px;
-}
-
-/* || ========== END "ОСОБЕННОСТИ" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "ЧЕМ МЫ ЗАНИМАЕМСЯ" ========== */
-
+/* ------------------------------------------------------ */
+/* || ------------ START "ЧЕМ МЫ ЗАНИМАЕМСЯ" ------------ */
+/* ------------------------------------------------------ */
 .activities {
+  min-height: 386px;
 }
 
 /* Чем мы занимаемся */
 .activities-container {
-  display: flex;
-  justify-content: center;
-  flex-flow: column nowrap;
-  width: 1200px;
-  height: 386px;
-  padding-left: 15px;
-  padding-right: 15px;
   margin: 0 auto;
 }
 
-.main-container .activities {
+main > .activities {
   padding-top: 47px;
 }
 
@@ -571,28 +543,21 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   min-width: 376px;
   min-height: 42px;
 }
+/* ------------------------------------------------------ */
+/* || ------------- END "ЧЕМ МЫ ЗАНИМАЕМСЯ" ------------- */
+/* ------------------------------------------------------ */
 
-/* || ========== END "ЧЕМ МЫ ЗАНИМАЕМСЯ" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "НАША КОМАНДА" ========== */
-
+/* ------------------------------------------------------ */
+/* || ------------- START "НАША КОМАНДА" ---------------- */
+/* ------------------------------------------------------ */
 .designers {
-  min-width: 1600px;
   min-height: 648px;
   background-color: var(--color-bg-section-grey);
+}
+
+.designers-container {
+  min-height: 460px;
+  margin: 0 auto;
 }
 
 /* Наша команда */
@@ -603,28 +568,26 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* team */
 .designers-list {
-  min-width: 1170px;
+  min-width: 100%;
   min-height: 368px;
   display: flex;
   justify-content: center;
 }
 
-/* team card 1 */
+/* team card 1-4 or "designers card" */
 .designers-list-item {
   min-width: 270px;
   min-height: 368px;
+  border-radius: 0 0 4px 4px;
+  background-color: var(--color-white); /* card bg */
+  /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
+  box-shadow: 0 1px 3px var(--color-designers-card-shadow-light),
+    0 1px 1px var(--color-designers-card-shadow-darker),
+    0 2px 1px var(--color-designers-card-shadow-darkest);
 }
 
 .designers-list-item:not(:nth-child(4n - 4)) {
   margin-right: 30px;
-}
-
-/* material shadow v1 */
-.designers-list-item {
-  box-shadow: 0 1px 3px var(--color-designers-list-item-box-shadow-middle-012),
-    0 1px 1px var(--color-designers-list-item-box-shadow-middle-014),
-    0 2px 1px var(--color-designers-list-item-box-shadow-middle-020);
-  border-radius: 0 0 4px 4px;
 }
 
 .designers-info-container {
@@ -646,8 +609,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* Designers-Name - Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков */
 .primary-text-font {
-  /* Inherits from the body: font-family: Roboto; */
-  /* inherits from the browser: font-style: normal; */
+  /* Наследует от body: font-family: Roboto; */
+  /* Наследует от браузера: font-style: normal; */
   font-weight: 500;
   font-size: 16px;
   line-height: 100%; /* 19px identical to box height */
@@ -662,43 +625,32 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .designers-role {
   text-align: center;
   min-height: 19px;
-  /* Inherits from the body font-family: Roboto; */
-  /* Inherits from the browser font-size: 16px; font-style: normal; font-weight: 400; */
+  /* Наследует от body font-family: Roboto; */
+  /* Наследует от браузера font-size: 16px; font-style: normal; font-weight: 400; */
   line-height: 100%; /* identical to box height 19px */
 
   letter-spacing: 0.03em;
 
   color: var(--color-text-secondary); /* Secondary text color #757575 */
 }
+/* ------------------------------------------------------ */
+/* || --------------- END "НАША КОМАНДА" ---------------- */
+/* ------------------------------------------------------ */
 
-/* || ========== END "НАША КОМАНДА" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "ПОДВАЛ САЙТА" ========== */
-
+/* ------------------------------------------------------ */
+/* || -------------- START "ПОДВАЛ САЙТА" --------------- */
+/* ------------------------------------------------------ */
 .page-footer {
-  width: 1600px;
-  height: 252px;
-  padding-bottom: 60px;
-  padding-top: 60px;
+  min-height: var(--min-height-footer);
+  padding: 60px 0;
   background-color: var(--color-bg-hero);
 }
 
 .footer-container {
   display: flex;
   flex-flow: row nowrap;
+  align-items: baseline;
+  max-height: 132px;
 }
 
 .footer-address-wrapper {
@@ -745,7 +697,6 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 .footer-social-container {
   display: flex;
-  align-items: flex-end;
   padding-left: 20px;
 }
 
@@ -761,24 +712,13 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* .footer-social-link {
 } */
+/* ------------------------------------------------------ */
+/* || -------------- END "ПОДВАЛ САЙТА" ----------------- */
+/* ------------------------------------------------------ */
 
-/* || ========== END "ПОДВАЛ САЙТА" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ========== */
-
+/* ------------------------------------------------------ */
+/* || ------- START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" -------- */
+/* ------------------------------------------------------ */
 .portfolio-filters {
   white-space: nowrap;
   display: flex;
@@ -787,6 +727,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   align-items: center;
   min-width: 1170px;
   min-height: 88px;
+  padding-bottom: 50px;
 }
 
 .portfolio-filters-list {
@@ -794,7 +735,6 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   justify-content: center;
   min-width: 611px;
 
-  padding-bottom: 50px;
   min-height: 38px;
 }
 
@@ -807,51 +747,49 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 /* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
-
-/* Вторичная кнопка по наведению: фон - акцент, текст белый + тень */
+/* Вторичная кнопка по наведению: фон - акцент, текст белый + тень (динамическая) */
 .btn--secondary:hover,
 .btn--secondary:focus,
 .btn--secondary:active {
-  color: var(--color-white);
   background-color: var(--color-accent); /* Акцент #2196F3 */
-
-  /* shadow-middle */
-  box-shadow: 0 3px 1px var(--color-filters-btn-box-shadow-middle-010),
-    0 1px 2px var(--color-filters-btn-box-shadow-middle-008),
-    0 2px 2px var(--color-filters-btn-box-shadow-middle-012);
+  color: var(--color-white);
+  /* Динамическая тень по наведению - shadow-middle */
+  box-shadow: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
+    0 1px 2px var(--color-filters-btn-box-shadow-light),
+    0 2px 2px var(--color-filters-btn-box-shadow-darkest);
 }
-
 /* END "Фильтры-Кнопки" */
 
-/* || ========== END "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ========== */
+/* ------------------------------------------------------ */
+/* || ------- END "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ---------- */
+/* ------------------------------------------------------ */
 
-/*
- *
-*/
-
-/* || ========== START "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" ========== */
-
+/* ------------------------------------------------------ */
+/* || --- START "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" -- */
+/* ------------------------------------------------------ */
 .portfolio-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  min-width: 1170px;
+  max-height: 1272px;
 }
 
 /* project 4 */
 .portfolio-list-item {
-  width: 370px;
-  height: 404px;
-  margin-bottom: 30px;
+  max-width: var(--max-width-portfolio-card);
+  max-height: var(--max-height-portfolio-card);
+  margin-bottom: var(--margin-bottom-portfolio-card);
   background-color: var(--color-white);
 }
 
 .portfolio-list-item:not(:nth-child(3n-3)) {
-  margin-right: 30px;
+  margin-right: var(--margin-right-portfolio-card);
 }
 
-/* Growing Business */
-.portfolio-project-name {
+/* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business" */
+.portfolio-projects-name {
   min-width: 322px;
   min-height: 36px;
   font-size: 18px;
@@ -859,12 +797,12 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   letter-spacing: 0.06em;
   white-space: nowrap;
   color: var(--color-text-primary);
-  /* Inherits from the body - font-family: Roboto;
-   * Inherits from the browser - font-size: 700px; font-style: normal; */
+  /* Наследует от body - font-family: Roboto;
+   * Наследует от браузера - font-size: 700px; font-weight: 700; font-style: normal; */
 }
 
 /* Маркетинг */
-.portfolio-project-type {
+.portfolio-projects-type {
   min-width: 322px;
   min-height: 30px;
   font-size: 16px;
@@ -879,60 +817,44 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   border-bottom: 1px solid var(--color-bg-project-card);
   border-left: 1px solid var(--color-bg-project-card);
 }
+/* ------------------------------------------------------ */
+/* || --- END "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" ---- */
+/* ------------------------------------------------------ */
 
-/* || ========== END "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" ========== */
+/* ------------------------------------------------------ */
+/* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
+/* ------------------------------------------------------ */
 
 /*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
-*/
-
-/* || ========== START "СТУДИЯ - ФОРМА" ========== */
 .contact-form {
-  min-width: 400px; /* Change me ! */
-  min-height: 200px; /* Change me ! */
-  padding: 40px; /* Change me ! */
-  margin: 0 auto; /* Change me ! */
-  border: 1px solid #cccccc; /* Change me ! */
+  min-width: 400px;           Change me !
+  padding: 40px;              Change me !
+  margin: 0 auto;             Change me !
+  border: 1px solid #cccccc;  Change me !
   margin-top: 21px;
 }
 
 .contact-form-message {
   resize: none;
-  padding: 20px; /* Change me ! */
+  padding: 20px;              Change me !
 }
 
 .contact-form-message::placeholder {
   text-transform: uppercase;
   background-color: var(--color-white);
   color: var(--color-text-secondary);
-  padding: 1px; /* Change me ! */
+  padding: 1px;               Change me !
 }
-/* || ========== END "СТУДИЯ - ФОРМА" ========== */
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
 */
 
-/* || ========== START "МОДАЛКА" ========== */
+/* ------------------------------------------------------ */
+/* || -------------- END "СТУДИЯ - ФОРМА" --------------- */
+/* ------------------------------------------------------ */
 
+/* ------------------------------------------------------ */
+/* || ----------------- START "МОДАЛКА" ----------------- */
+/* ------------------------------------------------------ */
+/*
 .backdrop {
   position: fixed;
   top: 0;
@@ -951,9 +873,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 580px;
-  background-color: #ffffff;
+  max-width: 60vw;
+  background-color: var(--color-white);
   border-radius: 21px;
 }
 
@@ -995,14 +916,16 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 .contact-form-btn {
   margin-right: 5px;
-}
-
-/* || ========== END "МОДАЛКА" ========== */
+} */
+/* ------------------------------------------------------ */
+/* || ------------------ END "МОДАЛКА" ------------------ */
+/* ------------------------------------------------------ */
 
 /* .stats-languages {
   homework-name: "hw-03-flexbox";
-  date: "2021-Jun-06 12:13";
+  date: "2021-Jun-06 18:09";
+  HTML 58.1%
+  CSS 41.0%
+  JavaScript 0.9%
   file-lines-css: 908;
-  HTML: 92.6%;
-  CSS: 7.4%;
 } */
