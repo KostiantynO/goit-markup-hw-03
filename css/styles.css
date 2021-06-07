@@ -1,12 +1,4 @@
 :root {
-  --max-width-body: 1600px; /* Макс. ширина страницы */
-  --min-height-header: 80px; /* Макс. высота шапки */
-  --min-height-footer: 252px; /* Макс. высота футера */
-  --max-width-portfolio-card: 370px; /* Макс. ширина карточки проекта */
-  --max-height-portfolio-card: 404px; /* Макс. высота карточки проекта */
-  --margin-right-portfolio-card: 30px; /* Горизонтальный отступ между карточками проекта */
-  --margin-bottom-portfolio-card: 30px; /* Вертикальный отступ между карточками проекта */
-
   /* Палитра */
   --color-text-primary: #212121; /* Основной цвет текста #212121 (nav-link, h2, h3, filters-btn) */
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
@@ -21,20 +13,71 @@
   --color-filters-btn-box-shadow-light: rgba(0, 0, 0, 0.08);
   --color-filters-btn-box-shadow-darker: rgba(0, 0, 0, 0.1);
   --color-filters-btn-box-shadow-darkest: rgba(0, 0, 0, 0.12);
+  --box-shadow-filters-btn: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
+    0 1px 2px var(--color-filters-btn-box-shadow-light),
+    0 2px 2px var(--color-filters-btn-box-shadow-darkest);
 
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
   --color-designers-card-shadow-light: rgba(0, 0, 0, 0.12);
   --color-designers-card-shadow-darker: rgba(0, 0, 0, 0.14);
   --color-designers-card-shadow-darkest: rgba(0, 0, 0, 0.2);
+  --designers-card-shadow: 0 1px 3px var(--color-designers-card-shadow-light),
+    0 1px 1px var(--color-designers-card-shadow-darker),
+    0 2px 1px var(--color-designers-card-shadow-darkest);
 
-  /* Тень для Кнопки-героя (статическая) */
   --color-hero-btn-shadow: rgba(0, 0, 0, 0.15);
+  --box-shadow-hero-btn: 0 4px 4px var(--color-hero-btn-shadow); /* Тень Кнопки-героя (статическая) */
 
-  /* Цвет Кнопки-героя при фокусе */
-  --color-hero-btn-hover: #188ce8;
+  --color-hero-btn-hover: #188ce8; /* Цвет Кнопки-героя при фокусе */
 
   --color-header-decoration-line: #ececec;
   --color-footer-contacts: rgba(255, 255, 255, 0.6);
+
+  /* Размеры Студии */
+  --max-width-body: 1600px; /* Макс. ширина страницы */
+  --max-width-container: 1200px; /* Макс. ширина контейнера */
+  --padding-container: 0 15px; /* Две вертикальные полосы заполнения, которые сжимают контент внутрь страницы по горизонтали */
+
+  --max-height-header: 80px; /* Макс. высота Хедера */
+  --min-height-footer: 252px; /* Мин. высота Футера */
+
+  --padding-logo: 2.5px 0; /* Две горизонтальные полосы заполнения между ссылкой и границей Лого для увеличения зоны клика */
+  --margin-right-logo-container: 93px; /* Правый отступ между Лого и навигацией */
+
+  --min-width-nav-menu: 294px; /* Мин. ширина меню Главной навигации */
+  --margin-right-nav-menu-item: 50px; /* Правый отступ между ссылками Главной навигации */
+
+  --min-width-header-contacts-container: 307px; /* Мин. ширина контейнера с Контактами в Хедере */
+  --margin-right-header-contacts-list-item: 50px; /* Правый отступ между ссылками Контактов в Хедере */
+
+  --margin-bottom-hero-title: 30px; /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
+
+  --margin-bottom-features-heading: 10px; /* Нижний отступ между Оглавлением h3 и параграфом в секции "Особенности" */
+  --margin-right-features-list-item: 30px; /* Правый отступ между параграфами в секции "Особенности" */
+
+  --margin-bottom-section-title: 50px; /* Нижний отступ между заголовком h2 и секциями "Чем мы занимаемся" и "Наша команда" */
+  --margin-right-activities-list-item: 30px; /* Правый отступ между изображениями в секции "Чем мы занимаемся" */
+
+  --margin-bottom-designers-photo: 30px; /* Нижний отступ между фото и именем дизайнера в секции "Наша команда" */
+  --margin-bottom-designers-name: 10px; /* Нижний отступ между именем и ролью дизайнера в секции "Наша команда" */
+  --margin-right-designers-list-item: 30px; /* Правый отступ между карточками дизайнеров в секции "Наша команда" */
+
+  --margin-top-footer-address: 20px; /* Верхний отступ между тегом адреса и Лого в Футере */
+  --margin-bottom-footer-address-list-item: 9px; /* Нижний отступ между ссылками адреса в Футере */
+
+  --min-width-footer-social-list: 400px; /* Мин. ширина списка ссылок на соц. сети в Футере */
+  --margin-right-footer-social-list-item: 21px; /* Правый отступ между ссылками на соц. сети в Футере */
+
+  /* Размеры Портфолио */
+  --margin-bottom-portfolio-filters: 50px; /* Нижний отступ между фильтрами-кнопками и карточками проектов в Портфолио */
+  --margin-right-portfolio-filters-list-item: 8px; /* Правый отступ между фильтрами-кнопками в Портфолио */
+
+  /* Макс. ширина карточки проекта */
+  --flex-basis-portfolio-card: calc((100% / 3) - var(--margin-right-portfolio-card));
+
+  --max-height-portfolio-card: 404px; /* Макс. высота карточки проекта */
+  --margin-right-portfolio-card: 30px; /* Горизонтальный отступ между карточками проекта */
+  --margin-bottom-portfolio-card: 30px; /* Вертикальный отступ между карточками проекта */
 }
 
 /* ------------------------------------------------------ */
@@ -82,8 +125,8 @@ body {
 } */
 
 .container {
-  max-width: 1200px;
-  padding: 0 15px;
+  max-width: var(--max-width-container);
+  padding: var(--padding-container);
   margin: 0 auto;
 }
 
@@ -95,13 +138,13 @@ body {
 /* Чем мы занимаемся, Наша команда */
 .section-title {
   line-height: 42px;
-  padding-bottom: 50px;
+  margin-bottom: var(--margin-bottom-section-title);
 
   font-size: 36px;
   text-align: center;
   letter-spacing: 0.03em;
-  /* Наследует от body font-family: Roboto; */
-  /* Наследует от браузера font-weight: 700; font-style: normal; */
+  /* Наследует от body - font-family: Roboto; */
+  /* Наследует от браузера - font-weight: 700; font-style: normal; */
 
   color: var(--color-text-primary); /* Primary text color #212121 */
 }
@@ -141,9 +184,7 @@ body {
   color: var(--color-white); /* Белый #FFFFFF */
 
   /* shadow-middle */
-  box-shadow: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
-    0 1px 2px var(--color-filters-btn-box-shadow-light),
-    0 2px 2px var(--color-filters-btn-box-shadow-darkest);
+  box-shadow: var(--box-shadow-filters-btn);
 }
 
 /* Вторичная кнопка: Фон - серый #f5f4fa,  цвет - темный #212121, + тень динамическая по ховеру */
@@ -164,7 +205,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
                                + header-contacts-container > (header-contacts-list) */
 
 .page-header {
-  max-height: var(--min-height-header);
+  max-height: var(--max-height-header);
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -185,6 +226,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   display: flex;
   align-items: center;
   min-height: 31px;
+  justify-content: space-between;
 }
 
 .header-nav {
@@ -199,7 +241,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 /* START "Ссылка-логотип WebStudio" */
 
 .logo-container {
-  padding-right: 93px;
+  margin-right: var(--margin-right-logo-container);
 }
 
 .logo {
@@ -208,7 +250,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   align-items: center;
 
   min-width: 145px;
-  min-height: 31px;
+
+  padding: var(--padding-logo);
 
   font-family: Raleway;
   font-style: normal;
@@ -219,10 +262,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .webstudio {
-  max-height: 31px;
-  min-height: 31px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  min-height: 26px;
 }
 
 .white {
@@ -245,9 +285,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   flex-flow: row nowrap;
   align-items: center;
 
-  padding-right: 331px;
-
-  min-width: 294px;
+  min-width: var(--min-width-nav-menu);
   min-height: 16px;
   color: var(--color-text-primary);
 }
@@ -257,7 +295,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .nav-menu-item:not(:last-child) {
-  padding-right: 50px;
+  margin-right: var(--margin-right-nav-menu-item);
 }
 
 /* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11 */
@@ -303,7 +341,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* START "Шапка сайта - Контакты" */
 .header-contacts-container {
-  min-width: 307px;
+  min-width: var(--min-width-header-contacts-container);
+  margin-left: auto;
   /* info@devstudio.com */ /* width: 135px; */
   /* +38 096 111 11 11  */ /* width: 122px; */
 }
@@ -315,7 +354,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .header-contacts-list-item:not(:last-child) {
-  padding-right: 50px;
+  margin-right: var(--margin-right-header-contacts-list-item);
 }
 
 .header-contacts {
@@ -407,7 +446,9 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .hero-container > .hero-title {
   min-width: 696px;
   min-height: 120px;
-  padding-bottom: 30px;
+
+  margin-bottom: var(--margin-bottom-hero-title);
+
   /* Наследует от body: font-family: Roboto; */
   /* Наследует от браузера: font-style: normal; */
   font-weight: 900;
@@ -436,7 +477,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   border-radius: 4px;
 
   /* Тень для Кнопки-героя (статическая) */
-  box-shadow: 0 4px 4px var(--color-hero-btn-shadow); /* rgba(0, 0, 0, 0.15) */
+  box-shadow: var(--box-shadow-hero-btn);
 }
 
 /* Hero-Button (Hover) */
@@ -477,14 +518,15 @@ main > .features {
 }
 
 .features-list-item:not(:nth-child(4n-4)) {
-  margin-right: 30px;
+  margin-right: var(--margin-right-features-list-item);
 }
 
 /* Внимание к деталям, Пунктуальность, Планирование, Современные технологии */
 .features-heading {
   min-width: 270px;
   min-height: 16px;
-  padding-bottom: 10px;
+
+  margin-bottom: var(--margin-bottom-features-heading);
 
   line-height: 16px;
   font-size: 14px;
@@ -535,7 +577,7 @@ main > .activities {
 }
 
 .activities-list-item:not(:nth-child(3n-3)) {
-  padding-right: 30px;
+  margin-right: var(--margin-right-activities-list-item);
 }
 
 /* Чем мы занимаемся */
@@ -581,13 +623,11 @@ main > .activities {
   border-radius: 0 0 4px 4px;
   background-color: var(--color-white); /* card bg */
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: 0 1px 3px var(--color-designers-card-shadow-light),
-    0 1px 1px var(--color-designers-card-shadow-darker),
-    0 2px 1px var(--color-designers-card-shadow-darkest);
+  box-shadow: var(--designers-card-shadow);
 }
 
 .designers-list-item:not(:nth-child(4n - 4)) {
-  margin-right: 30px;
+  margin-right: var(--margin-right-designers-list-item);
 }
 
 .designers-info-container {
@@ -598,13 +638,13 @@ main > .activities {
 
 .designers-photo {
   min-width: 270px;
-  min-height: 290px;
-  padding-bottom: 30px;
+  min-height: 260px;
+  margin-bottom: var(--margin-bottom-designers-photo);
 }
 
 .designers-name {
   min-height: 19px;
-  padding-bottom: 10px;
+  margin-bottom: var(--margin-bottom-designers-name);
 }
 
 /* Designers-Name - Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков */
@@ -662,7 +702,7 @@ main > .activities {
   font-style: inherit;
   min-width: 231px;
   min-height: 81px;
-  padding-top: 20px;
+  margin-top: var(--margin-top-footer-address);
 }
 
 .footer-address-list {
@@ -676,7 +716,7 @@ main > .activities {
 }
 
 .footer-address-list-item:not(:last-child) {
-  padding-bottom: 9px;
+  margin-bottom: var(--margin-bottom-footer-address-list-item);
 }
 
 /* г. Киев, пр-т Леси Украинки, 26, info@example.com, +38 099 111 11 11 */
@@ -702,12 +742,12 @@ main > .activities {
 
 .footer-social-list {
   display: flex;
-  min-width: 400px;
+  min-width: var(--min-width-footer-social-list);
   min-height: 21px;
 }
 
 .footer-social-list-item:not(:last-child) {
-  padding-right: 21px;
+  margin-right: var(--margin-right-footer-social-list-item);
 }
 
 /* .footer-social-link {
@@ -725,25 +765,19 @@ main > .activities {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  min-width: 1170px;
-  min-height: 88px;
-  padding-bottom: 50px;
+  margin-bottom: var(--margin-bottom-portfolio-filters);
 }
 
 .portfolio-filters-list {
   display: flex;
   justify-content: center;
-  min-width: 611px;
-
-  min-height: 38px;
 }
 
 .portfolio-filters-list-item {
-  min-height: 38px;
 }
 
 .portfolio-filters-list-item:not(:last-child) {
-  margin-right: 8px;
+  margin-right: var(--margin-right-portfolio-filters-list-item);
 }
 
 /* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
@@ -754,9 +788,7 @@ main > .activities {
   background-color: var(--color-accent); /* Акцент #2196F3 */
   color: var(--color-white);
   /* Динамическая тень по наведению - shadow-middle */
-  box-shadow: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
-    0 1px 2px var(--color-filters-btn-box-shadow-light),
-    0 2px 2px var(--color-filters-btn-box-shadow-darkest);
+  box-shadow: var(--box-shadow-filters-btn);
 }
 /* END "Фильтры-Кнопки" */
 
@@ -772,16 +804,27 @@ main > .activities {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  min-width: 1170px;
-  max-height: 1272px;
+  min-width: 100%;
+  outline: 1px solid tomato;
+
+  margin-bottom: calc(-1 * var(--margin-bottom-portfolio-card));
+  margin-right: calc(-1 * var(--margin-right-portfolio-card));
+
+  overflow: auto;
 }
 
 /* project 4 */
-.portfolio-list-item {
-  max-width: var(--max-width-portfolio-card);
+.portfolio-list > .portfolio-list-item {
+  outline: 1px solid teal;
+
+  flex-basis: var(--flex-basis-portfolio-card);
+
   max-height: var(--max-height-portfolio-card);
   margin-bottom: var(--margin-bottom-portfolio-card);
   background-color: var(--color-white);
+
+  margin-top: var(--margin-bottom-portfolio-card);
+  margin-left: var(--margin-right-portfolio-card);
 }
 
 .portfolio-list-item:not(:nth-child(3n-3)) {
@@ -825,27 +868,25 @@ main > .activities {
 /* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
 /* ------------------------------------------------------ */
 
-
 .contact-form {
-  min-width: 400px;           Change me !
-  padding: 40px;              Change me !
-  margin: 0 auto;             Change me !
-  border: 1px solid #cccccc;  Change me !
+  min-width: 400px; /* Change me ! */
+  padding: 40px; /* Change me ! */
+  margin: 0 auto; /* Change me ! */
+  border: 1px solid #cccccc; /* Change me ! */
   margin-top: 21px;
 }
 
 .contact-form-message {
   resize: none;
-  padding: 20px;              Change me !
+  padding: 20px; /* Change me ! */
 }
 
 .contact-form-message::placeholder {
   text-transform: uppercase;
   background-color: var(--color-white);
   color: var(--color-text-secondary);
-  padding: 1px;               Change me !
+  padding: 1px; /* Change me ! */
 }
-
 
 /* ------------------------------------------------------ */
 /* || -------------- END "СТУДИЯ - ФОРМА" --------------- */
