@@ -1,84 +1,123 @@
+/* Позиционирование */
+/* ...; */
+/* Блочная модель */
+/* ...; */
+/* Типографика */
+/* ...;  */
+/* Отображение */
+/* ...; */
+/* Прочее */
+/* ...; */
+
+/* ------------------------------------------------------ */
+/* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
+/* ------------------------------------------------------ */
 :root {
-  /* Палитра */
+  /* || ----------------- START "ПАЛИТРА" ----------------- */
   --color-text-primary: #212121; /* Основной цвет текста #212121 (nav-link, h2, h3, filters-btn) */
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
   --color-accent: #2196f3; /* Акцент #2196F3 */
+  --color-hero-btn-hover: #188ce8; /* Цвет Кнопки-героя при фокусе */
   --color-bg-hero: #2f303a;
   --color-bg-section-grey: #f5f4fa;
   --color-bg-project-card: #eeeeee;
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-header-decoration-line: #ececec;
 
   /* Тень для Главной кнопки (статическая) и Вторичной кнопки (динамическая - по наведению/при фокусе) */
   --color-filters-btn-box-shadow-light: rgba(0, 0, 0, 0.08);
   --color-filters-btn-box-shadow-darker: rgba(0, 0, 0, 0.1);
   --color-filters-btn-box-shadow-darkest: rgba(0, 0, 0, 0.12);
+
   --box-shadow-filters-btn: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
     0 1px 2px var(--color-filters-btn-box-shadow-light),
     0 2px 2px var(--color-filters-btn-box-shadow-darkest);
 
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  --color-designers-card-shadow-light: rgba(0, 0, 0, 0.12);
-  --color-designers-card-shadow-darker: rgba(0, 0, 0, 0.14);
-  --color-designers-card-shadow-darkest: rgba(0, 0, 0, 0.2);
-  --designers-card-shadow: 0 1px 3px var(--color-designers-card-shadow-light),
-    0 1px 1px var(--color-designers-card-shadow-darker),
-    0 2px 1px var(--color-designers-card-shadow-darkest);
+  --color-designers-card-box-shadow-light: rgba(0, 0, 0, 0.12);
+  --color-designers-card-box-shadow-darker: rgba(0, 0, 0, 0.14);
+  --color-designers-card-box-shadow-darkest: rgba(0, 0, 0, 0.2);
+
+  --box-shadow-designers-card: 0 1px 3px var(--color-designers-card-box-shadow-light),
+    0 1px 1px var(--color-designers-card-box-shadow-darker),
+    0 2px 1px var(--color-designers-card-box-shadow-darkest);
 
   --color-hero-btn-shadow: rgba(0, 0, 0, 0.15);
   --box-shadow-hero-btn: 0 4px 4px var(--color-hero-btn-shadow); /* Тень Кнопки-героя (статическая) */
 
-  --color-hero-btn-hover: #188ce8; /* Цвет Кнопки-героя при фокусе */
-
-  --color-header-decoration-line: #ececec;
   --color-footer-contacts: rgba(255, 255, 255, 0.6);
+  /* || ------------------ END "ПАЛИТРА" ------------------ */
 
-  /* Размеры Студии */
-  --max-width-body: 1600px; /* Макс. ширина страницы */
+  /* || ------------- START "РАЗМЕРЫ СТУДИИ" -------------- */
+
   --max-width-container: 1200px; /* Макс. ширина контейнера */
-  --padding-container: 0 15px; /* Две вертикальные полосы заполнения, которые сжимают контент внутрь страницы по горизонтали */
+  --padding-container: 0 15px; /* Падинги - дают отступ от контейнера - сжимают контент внутрь страницы по горизонтали  */
 
-  --max-height-header: 80px; /* Макс. высота Хедера */
-  --min-height-footer: 252px; /* Мин. высота Футера */
+  /* Хедер */
+  --min-height-header: 80px; /* Мин. высота Хедера */
 
-  --padding-logo: 2.5px 0; /* Две горизонтальные полосы заполнения между ссылкой и границей Лого для увеличения зоны клика */
+  /* Хедер-Лого */
+  --padding-logo: 2.5px 0; /* Вертикальные Падинги для увеличения зоны клика по ссылке */
   --margin-right-logo-container: 93px; /* Правый отступ между Лого и навигацией */
 
+  /* Хедер-"Главная навигация" */
   --min-width-nav-menu: 294px; /* Мин. ширина меню Главной навигации */
   --margin-right-nav-menu-item: 50px; /* Правый отступ между ссылками Главной навигации */
 
-  --min-width-header-contacts-container: 307px; /* Мин. ширина контейнера с Контактами в Хедере */
-  --margin-right-header-contacts-list-item: 50px; /* Правый отступ между ссылками Контактов в Хедере */
+  /* Хедер-Контакты */
+  --min-width-header-contacts-container: 307px; /* Мин. ширина контейнера с Контактами */
+  --margin-right-header-contacts-list-item: 50px; /* Правый отступ между ссылками Контактов */
 
+  /* Герой */
   --margin-bottom-hero-title: 30px; /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
 
-  --margin-bottom-features-heading: 10px; /* Нижний отступ между Оглавлением h3 и параграфом в секции "Особенности" */
-  --margin-right-features-list-item: 30px; /* Правый отступ между параграфами в секции "Особенности" */
+  /* Особенности */
+  --margin-bottom-features-heading: 10px; /* Нижний отступ между Оглавлением h3 и параграфом */
+  --margin-right-features-list-item: 30px; /* Правый отступ между параграфами */
 
+  /* "Чем мы занимаемся" */
   --margin-bottom-section-title: 50px; /* Нижний отступ между заголовком h2 и секциями "Чем мы занимаемся" и "Наша команда" */
-  --margin-right-activities-list-item: 30px; /* Правый отступ между изображениями в секции "Чем мы занимаемся" */
+  --margin-right-activities-list-item: 30px; /* Правый отступ между изображениями активностей */
 
-  --margin-bottom-designers-photo: 30px; /* Нижний отступ между фото и именем дизайнера в секции "Наша команда" */
-  --margin-bottom-designers-name: 10px; /* Нижний отступ между именем и ролью дизайнера в секции "Наша команда" */
-  --margin-right-designers-list-item: 30px; /* Правый отступ между карточками дизайнеров в секции "Наша команда" */
+  /* "Наша команда"-"Карточка дизайнера" */
+  --margin-bottom-designers-photo: 30px; /* Нижний отступ между фото и именем дизайнера */
+  --padding-designers-card-title: 30px 15px; /* Элементы под фото дизайнера обернул в див, и дал паддинги со всех сторон */
+  --margin-bottom-designers-name: 10px; /* Нижний отступ между именем и ролью дизайнера */
+  --margin-right-designers-list-item: 30px; /* Правый отступ между карточками дизайнеров */
 
-  --margin-top-footer-address: 20px; /* Верхний отступ между тегом адреса и Лого в Футере */
-  --margin-bottom-footer-address-list-item: 9px; /* Нижний отступ между ссылками адреса в Футере */
+  /* Футер */
+  --min-height-footer: 252px; /* Мин. высота Футера */
 
+  /* Футер-Адрес */
+  --margin-top-footer-address: 20px; /* Верхний отступ между адресом и Лого в Футере */
+  --margin-bottom-footer-address-list-item: 9px; /* Нижний отступ между ссылками в адресе в Футере */
+
+  /* Футер-Соц-ссылки */
+  --padding-left-footer-social-container: 20px; /* Левый отступ между контейнерами ссылок на соц. сети и адресом в Футере */
   --min-width-footer-social-list: 400px; /* Мин. ширина списка ссылок на соц. сети в Футере */
   --margin-right-footer-social-list-item: 21px; /* Правый отступ между ссылками на соц. сети в Футере */
+  /* || -------------- END "РАЗМЕРЫ СТУДИИ" --------------- */
 
-  /* Размеры Портфолио */
+  /* || ------------ START "РАЗМЕРЫ ПОРТФОЛИО" ------------ */
+  /* Портфолио-Фильтры-кнопки */
   --margin-bottom-portfolio-filters: 50px; /* Нижний отступ между фильтрами-кнопками и карточками проектов в Портфолио */
   --margin-right-portfolio-filters-list-item: 8px; /* Правый отступ между фильтрами-кнопками в Портфолио */
+
+  /* Портфолио-"Карточки проекта" */
+  --min-height-portfolio-card: 404px; /* Мин. высота карточки проекта */
+  --margin-right-portfolio-card: 30px; /* Горизонтальный отступ между карточками проекта */
+  --margin-bottom-portfolio-card: 30px; /* Вертикальный отступ между карточками проекта */
 
   /* Макс. ширина карточки проекта */
   --flex-basis-portfolio-card: calc((100% / 3) - var(--margin-right-portfolio-card));
 
-  --max-height-portfolio-card: 404px; /* Макс. высота карточки проекта */
-  --margin-right-portfolio-card: 30px; /* Горизонтальный отступ между карточками проекта */
-  --margin-bottom-portfolio-card: 30px; /* Вертикальный отступ между карточками проекта */
+  /* || ------------- END "РАЗМЕРЫ ПОРТФОЛИО" ------------- */
 }
+
+/* ------------------------------------------------------ */
+/* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
+/* ------------------------------------------------------ */
 
 /* ------------------------------------------------------ */
 /* || ------------- START "ОБЩИЕ НАСТРОЙКИ" ------------- */
@@ -113,7 +152,6 @@ body {
   font-family: Roboto;
   color: var(--color-text-primary);
   background-color: var(--color-white);
-  max-width: var(--max-width-body);
   margin: 0 auto;
 }
 
@@ -153,9 +191,10 @@ body {
   list-style: none;
 }
 
-.image,
-.symbol {
+.image {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .links {
@@ -205,7 +244,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
                                + header-contacts-container > (header-contacts-list) */
 
 .page-header {
-  max-height: var(--max-height-header);
+  min-height: var(--min-height-header);
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -214,8 +253,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .page-header::after {
   content: "";
   position: absolute;
-  max-width: var(--max-width-body);
-  min-width: var(--max-width-body);
+  min-width: 100%;
   max-height: 0;
   top: 80px;
   /* Line */
@@ -226,7 +264,6 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   display: flex;
   align-items: center;
   min-height: 31px;
-  justify-content: space-between;
 }
 
 .header-nav {
@@ -574,6 +611,8 @@ main > .activities {
 .activities-list {
   display: flex;
   justify-content: center;
+  min-width: 1170px;
+  min-height: 386px;
 }
 
 .activities-list-item:not(:nth-child(3n-3)) {
@@ -610,35 +649,44 @@ main > .activities {
 
 /* team */
 .designers-list {
-  min-width: 100%;
+  min-width: 1170px;
   min-height: 368px;
   display: flex;
   justify-content: center;
 }
 
 /* team card 1-4 or "designers card" */
-.designers-list-item {
+.designers-list > .designers-list-item {
+  display: block;
   min-width: 270px;
   min-height: 368px;
+}
+
+.designers-card {
+  min-width: 270px;
+
   border-radius: 0 0 4px 4px;
   background-color: var(--color-white); /* card bg */
+
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: var(--designers-card-shadow);
+  box-shadow: var(--box-shadow-designers-card);
 }
 
 .designers-list-item:not(:nth-child(4n - 4)) {
   margin-right: var(--margin-right-designers-list-item);
 }
 
-.designers-info-container {
+.designers-card-title {
+  min-height: 108px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: var(--padding-designers-card-title);
 }
 
 .designers-photo {
-  min-width: 270px;
-  min-height: 260px;
   margin-bottom: var(--margin-bottom-designers-photo);
 }
 
@@ -737,7 +785,7 @@ main > .activities {
 
 .footer-social-container {
   display: flex;
-  padding-left: 20px;
+  padding-left: var(--padding-left-footer-social-container);
 }
 
 .footer-social-list {
@@ -773,8 +821,8 @@ main > .activities {
   justify-content: center;
 }
 
-.portfolio-filters-list-item {
-}
+/* .portfolio-filters-list-item {
+} */
 
 .portfolio-filters-list-item:not(:last-child) {
   margin-right: var(--margin-right-portfolio-filters-list-item);
@@ -804,7 +852,10 @@ main > .activities {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
+  min-width: 1170px;
+  max-width: 1170px;
+  min-height: 1272px;
+  max-height: 1272px;
   outline: 1px solid tomato;
 
   margin-bottom: calc(-1 * var(--margin-bottom-portfolio-card));
@@ -819,7 +870,7 @@ main > .activities {
 
   flex-basis: var(--flex-basis-portfolio-card);
 
-  max-height: var(--max-height-portfolio-card);
+  min-height: var(--min-height-portfolio-card);
   margin-bottom: var(--margin-bottom-portfolio-card);
   background-color: var(--color-white);
 
