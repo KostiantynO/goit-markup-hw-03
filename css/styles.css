@@ -28,22 +28,22 @@
   --color-header-decoration-line: #ececec;
 
   /* Тень для Главной кнопки (статическая) и Вторичной кнопки (динамическая - по наведению/при фокусе) */
-  --color-filters-btn-box-shadow-light: rgba(0, 0, 0, 0.08);
-  --color-filters-btn-box-shadow-darker: rgba(0, 0, 0, 0.1);
-  --color-filters-btn-box-shadow-darkest: rgba(0, 0, 0, 0.12);
+  --color-filter-btn-box-shadow-light: rgba(0, 0, 0, 0.08);
+  --color-filter-btn-box-shadow-darker: rgba(0, 0, 0, 0.1);
+  --color-filter-btn-box-shadow-darkest: rgba(0, 0, 0, 0.12);
 
-  --box-shadow-filters-btn: 0 3px 1px var(--color-filters-btn-box-shadow-darker),
-    0 1px 2px var(--color-filters-btn-box-shadow-light),
-    0 2px 2px var(--color-filters-btn-box-shadow-darkest);
+  --box-shadow-filter-btn: 0 3px 1px var(--color-filter-btn-box-shadow-darker),
+    0 1px 2px var(--color-filter-btn-box-shadow-light),
+    0 2px 2px var(--color-filter-btn-box-shadow-darkest);
 
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  --color-designers-card-box-shadow-light: rgba(0, 0, 0, 0.12);
-  --color-designers-card-box-shadow-darker: rgba(0, 0, 0, 0.14);
-  --color-designers-card-box-shadow-darkest: rgba(0, 0, 0, 0.2);
+  --color-designer-card-box-shadow-light: rgba(0, 0, 0, 0.12);
+  --color-designer-card-box-shadow-darker: rgba(0, 0, 0, 0.14);
+  --color-designer-card-box-shadow-darkest: rgba(0, 0, 0, 0.2);
 
-  --box-shadow-designers-card: 0 1px 3px var(--color-designers-card-box-shadow-light),
-    0 1px 1px var(--color-designers-card-box-shadow-darker),
-    0 2px 1px var(--color-designers-card-box-shadow-darkest);
+  --box-shadow-designer-card: 0 1px 3px var(--color-designer-card-box-shadow-light),
+    0 1px 1px var(--color-designer-card-box-shadow-darker),
+    0 2px 1px var(--color-designer-card-box-shadow-darkest);
 
   --color-hero-btn-shadow: rgba(0, 0, 0, 0.15);
   --box-shadow-hero-btn: 0 4px 4px var(--color-hero-btn-shadow); /* Тень Кнопки-героя (статическая) */
@@ -54,8 +54,9 @@
   /* || ------------- START "ОТСТУПЫ СТУДИИ" -------------- */
   --max-width-container: 1200px; /* Макс. ширина контейнера */
   --padding-container: 0 15px; /* Падинги - дают отступ от контейнера - сжимают контент внутрь страницы по горизонтали  */
-  --flex-card-margin: 30px; /* Верхний и Левый отступы между карточками Особенностей, Активностей, Дизайнеров. */
-  --flex-margins-top-and-left: var(--flex-card-margin) 0 0 var(--flex-card-margin);
+  --min-width-activity-image: 370px;
+  --breakpoint-mr: 30px; /* (mr=margin) Часто используемое значение для высоты и отступов между элементами */
+  --flex-margins-top-and-left: var(--breakpoint-mr) 0 0 var(--breakpoint-mr);
 
   /* Хедер */
   /* Хедер-Лого */
@@ -69,7 +70,6 @@
   --margin-right-header-contacts-list-item: 50px; /* Правый отступ между ссылками Контактов */
 
   /* Герой */
-  --margin-bottom-30px: 30px; /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
 
   /* Особенности */
   --flex-features-card-qty: 4; /* Кол-во карточек Особенностей на одной линии. */
@@ -80,10 +80,8 @@
   --margin-bottom-section-title: 50px; /* Нижний отступ между заголовком h2 и секциями "Чем мы занимаемся" и "Наша команда" */
 
   /* "Наша команда"-"Карточки Дизайнеров" */
-  --flex-designers-card-qty: 4; /* Кол-во карточек Дизайнеров на одной линии. */
-
-  --padding-designers-card-title: 30px; /* Паддинги между именем и ролью дизайнера и их контейнером */
-  --margin-bottom-designers-name: 10px; /* Нижний отступ между именем и ролью дизайнера */
+  --flex-designer-card-qty: 4; /* Кол-во карточек Дизайнеров на одной линии. */
+  --margin-bottom-designer-name: 10px; /* Нижний отступ между именем и ролью дизайнера */
 
   /* Футер */
   /* Футер-Адрес */
@@ -95,19 +93,18 @@
   --margin-right-footer-social-list-item: 21px; /* Правый отступ между ссылками на соц. сети */
   /* || -------------- END "ОТСТУПЫ СТУДИИ" --------------- */
 
-  /* || ------------ START "РАЗМЕРЫ ПОРТФОЛИО" ------------ */
+  /* || ------------ START "ОТСТУПЫ ПОРТФОЛИО" ------------ */
   /* Портфолио-Фильтры-кнопки */
+  --margin-top-portfolio-filter: 15px; /* Верхний отступ между фильтрами-кнопками */
+  --margin-left-portfolio-filter: 8px; /* Левый отступ между фильтрами-кнопками */
   --margin-bottom-portfolio-filters: 50px; /* Нижний отступ между Фильтрами-кнопками и карточками Проектов */
-  --margin-right-portfolio-filters-list-item: 8px; /* Правый отступ между фильтрами-кнопками */
 
   /* Портфолио-"Карточки Проектов" */
   --flex-portfolio-card-qty: 3; /* Количество карточек Проектов на одной линии во флекс-сетке. */
 
   /* Макс. ширина карточки Проектов */
-  --flex-basis-portfolio-card: calc(
-    100% / var(--flex-portfolio-card-qty) - var(--flex-card-margin)
-  );
-  /* || ------------- END "РАЗМЕРЫ ПОРТФОЛИО" ------------- */
+  --flex-basis-portfolio-card: calc(100% / var(--flex-portfolio-card-qty) - var(--breakpoint-mr));
+  /* || ------------- END "ОТСТУПЫ ПОРТФОЛИО" ------------- */
 }
 /* ------------------------------------------------------ */
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
@@ -153,11 +150,13 @@ body {
 
 .container {
   max-width: var(--max-width-container);
+  min-width: var(--min-width-activity-image); /* Мин. ширина картинки активности */
   padding: var(--padding-container);
   margin: 0 auto;
 }
 
 .section {
+  min-width: 370px;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -211,7 +210,7 @@ body {
   color: var(--color-white); /* Белый #FFFFFF */
 
   /* shadow-middle */
-  box-shadow: var(--box-shadow-filters-btn);
+  box-shadow: var(--box-shadow-filter-btn);
 }
 
 /* Вторичная кнопка: Фон - серый #f5f4fa,  цвет - темный #212121, + тень динамическая по ховеру */
@@ -232,6 +231,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
                                + header-contacts-container > (header-contacts-list) */
 
 .page-header {
+  min-width: 370px;
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -248,10 +248,12 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .header-container {
+  flex-flow: row wrap;
   align-items: center;
 }
 
 .header-nav {
+  flex-flow: row wrap;
   align-items: center;
 }
 
@@ -424,24 +426,41 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 /* ------------------------------------------------------ */
 /* || ------------------ START "ГЕРОЙ" ------------------ */
 /* ------------------------------------------------------ */
-.hero {
+main > .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
   background-color: var(--color-bg-hero); /* 2F303A */
 }
 
 .hero-container {
+  min-height: 200px;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 
 /* Эффективные решения для вашего бизнеса */
-.hero-container > .hero-title {
-  margin-bottom: var(--margin-bottom-30px);
+.hero-title-container {
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 696px;
+  min-height: 120px;
+  margin-bottom: var(--breakpoint-mr); /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
+}
 
+.hero-title-br {
+  padding: 10px 0;
+  display: block;
+}
+
+/* Эффективные решения для вашего бизнеса */
+.hero-title-container > .hero-title {
   /* Наследует от body: font-family: Roboto; */
   /* Наследует от браузера: font-style: normal; */
+
   font-weight: 900;
-  font-size: 44px;
+  font-size: clamp(1.2em, 4.5vw, 44px);
   line-height: 136%; /* 60px or 136% */
   text-align: center;
   letter-spacing: 0.06em;
@@ -496,14 +515,14 @@ main > .features {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-top: calc(-1 * var(--flex-card-margin));
-  margin-left: calc(-1 * var(--flex-card-margin));
+  margin-top: calc(-1 * var(--breakpoint-mr));
+  margin-left: calc(-1 * var(--breakpoint-mr));
 }
 
 .features-list-item {
-  flex-basis: calc(100% / var(--flex-features-card-qty) - var(--flex-card-margin));
-  margin-top: var(--flex-card-margin);
-  margin-left: var(--flex-card-margin);
+  flex-basis: calc(100% / var(--flex-features-card-qty) - var(--breakpoint-mr));
+  margin-top: var(--breakpoint-mr);
+  margin-left: var(--breakpoint-mr);
 }
 
 /* Внимание к деталям, Пунктуальность, Планирование, Современные технологии */
@@ -550,14 +569,14 @@ main > .activities {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-top: calc(-1 * var(--flex-card-margin));
-  margin-left: calc(-1 * var(--flex-card-margin));
+  margin-top: calc(-1 * var(--breakpoint-mr));
+  margin-left: calc(-1 * var(--breakpoint-mr));
 }
 
 .activities-list-item {
-  flex-basis: calc(100% / var(--flex-activities-card-qty) - var(--flex-card-margin));
-  margin-top: var(--flex-card-margin);
-  margin-left: var(--flex-card-margin);
+  flex-basis: calc(100% / var(--flex-activities-card-qty) - var(--breakpoint-mr));
+  margin-top: var(--breakpoint-mr);
+  margin-left: var(--breakpoint-mr);
 }
 /* .activities-title { } */
 /* ------------------------------------------------------ */
@@ -579,35 +598,36 @@ main > .activities {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-top: calc(-1 * var(--flex-card-margin));
-  margin-left: calc(-1 * var(--flex-card-margin));
+  margin-top: calc(-1 * var(--breakpoint-mr));
+  margin-left: calc(-1 * var(--breakpoint-mr));
 }
 
-/* team card 1-4 or "designers card" */
-.designers-list-item {
-  flex-basis: calc(100% / var(--flex-designers-card-qty) - var(--flex-card-margin));
-  margin-top: var(--flex-card-margin);
-  margin-left: var(--flex-card-margin);
+/* team card 1-4 or "designer card" */
+.designer-list-item {
+  flex-basis: calc(100% / var(--flex-designer-card-qty) - var(--breakpoint-mr));
+  margin-top: var(--breakpoint-mr);
+  margin-left: var(--breakpoint-mr);
 }
 
-.designers-card {
+.designer-card {
+  max-width: var(--max-width-designer-card);
   border-radius: 0 0 4px 4px;
   background-color: var(--color-white); /* card bg */
 
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: var(--box-shadow-designers-card);
+  box-shadow: var(--box-shadow-designer-card);
 }
 
-.designers-card-title {
-  padding: var(--padding-designers-card-title);
+.designer-card-title {
+  padding: var(--breakpoint-mr); /* Паддинги между именем/ролью дизайнера и их контейнером */
 }
 
-.designers-name {
+.designer-name {
   min-height: 19px;
   margin-bottom: var(--margin-bottom-designers-name);
 }
 
-/* Designers-Name - Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков */
+/* Designer-name - Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков */
 .primary-text-font {
   /* Наследует от body: font-family: Roboto; */
   /* Наследует от браузера: font-style: normal; */
@@ -622,7 +642,7 @@ main > .activities {
 }
 
 /* Product Designer */
-.designers-role {
+.designer-role {
   text-align: center;
   min-height: 19px;
   /* Наследует от body font-family: Roboto; */
@@ -641,12 +661,13 @@ main > .activities {
 /* || -------------- START "ПОДВАЛ САЙТА" --------------- */
 /* ------------------------------------------------------ */
 .page-footer {
+  min-width: 370px;
   padding: 60px 0;
   background-color: var(--color-bg-hero);
 }
 
 .footer-container {
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: baseline;
 }
 
@@ -684,7 +705,9 @@ main > .activities {
   padding-left: var(--padding-left-footer-social-container);
 }
 
-/* .footer-social-list {} */
+.footer-social-list {
+  flex-flow: row wrap;
+}
 
 .footer-social-list-item:not(:last-child) {
   margin-right: var(--margin-right-footer-social-list-item);
@@ -701,21 +724,22 @@ main > .activities {
 /* ------------------------------------------------------ */
 .portfolio-filters {
   white-space: nowrap;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   margin-bottom: var(--margin-bottom-portfolio-filters);
 }
 
 .portfolio-filters-list {
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-top: calc(-1 * var(--margin-top-portfolio-filter));
+  margin-left: calc(-1 * var(--margin-left-portfolio-filter));
 }
 
-/* .portfolio-filters-list-item {
-} */
-
-.portfolio-filters-list-item:not(:last-child) {
-  margin-right: var(--margin-right-portfolio-filters-list-item);
+.portfolio-filter-list-item {
+  margin-top: var(--margin-top-portfolio-filter);
+  margin-left: var(--margin-left-portfolio-filter);
 }
 
 /* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
@@ -726,7 +750,7 @@ main > .activities {
   background-color: var(--color-accent); /* Акцент #2196F3 */
   color: var(--color-white);
   /* Динамическая тень по наведению - shadow-middle */
-  box-shadow: var(--box-shadow-filters-btn);
+  box-shadow: var(--box-shadow-filter-btn);
 }
 /* END "Фильтры-Кнопки" */
 
@@ -742,9 +766,8 @@ main > .activities {
   justify-content: center;
   align-items: center;
 
-  margin-top: calc(-1 * var(--flex-card-margin));
-  margin-left: calc(-1 * var(--flex-card-margin));
-  outline: 1px solid tomato;
+  margin-top: calc(-1 * var(--breakpoint-mr));
+  margin-left: calc(-1 * var(--breakpoint-mr));
 }
 
 /* project 4 */
@@ -752,11 +775,11 @@ main > .activities {
   flex-basis: var(--flex-basis-portfolio-card);
   margin: var(--flex-margins-top-and-left);
   background-color: var(--color-white);
-  outline: 1px solid teal;
 }
 
 /* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business" */
-.portfolio-projects-name {
+.portfolio-project-name {
+  min-height: calc(6px + var(--breakpoint-mr));
   font-size: 18px;
   line-height: 200%; /* identical to box height, 36px or 200% */
   letter-spacing: 0.06em;
@@ -766,17 +789,14 @@ main > .activities {
    * Наследует от браузера - font-size: 700px; font-weight: 700; font-style: normal; */
 }
 
-/* Маркетинг */
-.portfolio-projects-type {
-  min-width: 322px;
-  min-height: 30px;
+/* Тип проекта: Веб-сайт, Дизайн, Приложение, Маркетинг */
+.portfolio-project-type {
+  min-height: var(--breakpoint-mr);
   font-size: 16px;
   line-height: 187%;
 }
 
 .project-title {
-  min-width: 322px;
-  min-height: 70px;
   padding: 20px 24px;
   border-right: 1px solid var(--color-bg-project-card);
   border-bottom: 1px solid var(--color-bg-project-card);
@@ -889,9 +909,3 @@ main > .activities {
   JavaScript 0.9%
   file-lines-css: 898;
 } */
-
-/* START Code reduction */
-.hero-container > .hero-title {
-  font-size: clamp(1rem, 4.5vw, 44px);
-}
-/* END Code reduction */
