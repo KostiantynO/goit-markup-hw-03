@@ -13,6 +13,8 @@
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
 :root {
+  --font-family-body: Roboto, "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+
   /* || ----------------- START "ПАЛИТРА" ----------------- */
   --color-text-primary: #212121; /* Основной цвет текста #212121 (nav-link, h2, h3, filters-btn) */
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
@@ -49,72 +51,64 @@
   --color-footer-contacts: rgba(255, 255, 255, 0.6);
   /* || ------------------ END "ПАЛИТРА" ------------------ */
 
-  /* || ------------- START "РАЗМЕРЫ СТУДИИ" -------------- */
-
+  /* || ------------- START "ОТСТУПЫ СТУДИИ" -------------- */
   --max-width-container: 1200px; /* Макс. ширина контейнера */
   --padding-container: 0 15px; /* Падинги - дают отступ от контейнера - сжимают контент внутрь страницы по горизонтали  */
+  --flex-card-margin: 30px; /* Верхний и Левый отступы между карточками Особенностей, Активностей, Дизайнеров. */
+  --flex-margins-top-and-left: var(--flex-card-margin) 0 0 var(--flex-card-margin);
 
   /* Хедер */
-  --min-height-header: 80px; /* Мин. высота Хедера */
-
   /* Хедер-Лого */
   --padding-logo: 2.5px 0; /* Вертикальные Падинги для увеличения зоны клика по ссылке */
   --margin-right-logo-container: 93px; /* Правый отступ между Лого и навигацией */
 
   /* Хедер-"Главная навигация" */
-  --min-width-nav-menu: 294px; /* Мин. ширина меню Главной навигации */
   --margin-right-nav-menu-item: 50px; /* Правый отступ между ссылками Главной навигации */
 
   /* Хедер-Контакты */
-  --min-width-header-contacts-container: 307px; /* Мин. ширина контейнера с Контактами */
   --margin-right-header-contacts-list-item: 50px; /* Правый отступ между ссылками Контактов */
 
   /* Герой */
-  --margin-bottom-hero-title: 30px; /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
+  --margin-bottom-30px: 30px; /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
 
   /* Особенности */
+  --flex-features-card-qty: 4; /* Кол-во карточек Особенностей на одной линии. */
   --margin-bottom-features-heading: 10px; /* Нижний отступ между Оглавлением h3 и параграфом */
-  --margin-right-features-list-item: 30px; /* Правый отступ между параграфами */
 
   /* "Чем мы занимаемся" */
+  --flex-activities-card-qty: 3; /* Кол-во карточек Активностей на одной линии. */
   --margin-bottom-section-title: 50px; /* Нижний отступ между заголовком h2 и секциями "Чем мы занимаемся" и "Наша команда" */
-  --margin-right-activities-list-item: 30px; /* Правый отступ между изображениями активностей */
 
-  /* "Наша команда"-"Карточка дизайнера" */
-  --margin-bottom-designers-photo: 30px; /* Нижний отступ между фото и именем дизайнера */
-  --padding-designers-card-title: 30px 15px; /* Элементы под фото дизайнера обернул в див, и дал паддинги со всех сторон */
+  /* "Наша команда"-"Карточки Дизайнеров" */
+  --flex-designers-card-qty: 4; /* Кол-во карточек Дизайнеров на одной линии. */
+
+  --padding-designers-card-title: 30px; /* Паддинги между именем и ролью дизайнера и их контейнером */
   --margin-bottom-designers-name: 10px; /* Нижний отступ между именем и ролью дизайнера */
-  --margin-right-designers-list-item: 30px; /* Правый отступ между карточками дизайнеров */
 
   /* Футер */
-  --min-height-footer: 252px; /* Мин. высота Футера */
-
   /* Футер-Адрес */
-  --margin-top-footer-address: 20px; /* Верхний отступ между адресом и Лого в Футере */
-  --margin-bottom-footer-address-list-item: 9px; /* Нижний отступ между ссылками в адресе в Футере */
+  --margin-top-footer-address: 20px; /* Верхний отступ между адресом и Лого */
+  --margin-bottom-footer-address-list-item: 9px; /* Нижний отступ между ссылками в адресе */
 
   /* Футер-Соц-ссылки */
-  --padding-left-footer-social-container: 20px; /* Левый отступ между контейнерами ссылок на соц. сети и адресом в Футере */
-  --min-width-footer-social-list: 400px; /* Мин. ширина списка ссылок на соц. сети в Футере */
-  --margin-right-footer-social-list-item: 21px; /* Правый отступ между ссылками на соц. сети в Футере */
-  /* || -------------- END "РАЗМЕРЫ СТУДИИ" --------------- */
+  --padding-left-footer-social-container: 20px; /* Левый отступ между контейнерами ссылок на соц. сети и адресом */
+  --margin-right-footer-social-list-item: 21px; /* Правый отступ между ссылками на соц. сети */
+  /* || -------------- END "ОТСТУПЫ СТУДИИ" --------------- */
 
   /* || ------------ START "РАЗМЕРЫ ПОРТФОЛИО" ------------ */
   /* Портфолио-Фильтры-кнопки */
-  --margin-bottom-portfolio-filters: 50px; /* Нижний отступ между фильтрами-кнопками и карточками проектов в Портфолио */
-  --margin-right-portfolio-filters-list-item: 8px; /* Правый отступ между фильтрами-кнопками в Портфолио */
+  --margin-bottom-portfolio-filters: 50px; /* Нижний отступ между Фильтрами-кнопками и карточками Проектов */
+  --margin-right-portfolio-filters-list-item: 8px; /* Правый отступ между фильтрами-кнопками */
 
-  /* Портфолио-"Карточки проекта" */
-  --min-height-portfolio-card: 404px; /* Мин. высота карточки проекта */
-  --margin-right-portfolio-card: 30px; /* Горизонтальный отступ между карточками проекта */
-  --margin-bottom-portfolio-card: 30px; /* Вертикальный отступ между карточками проекта */
+  /* Портфолио-"Карточки Проектов" */
+  --flex-portfolio-card-qty: 3; /* Количество карточек Проектов на одной линии во флекс-сетке. */
 
-  /* Макс. ширина карточки проекта */
-  --flex-basis-portfolio-card: calc((100% / 3) - var(--margin-right-portfolio-card));
-
+  /* Макс. ширина карточки Проектов */
+  --flex-basis-portfolio-card: calc(
+    100% / var(--flex-portfolio-card-qty) - var(--flex-card-margin)
+  );
   /* || ------------- END "РАЗМЕРЫ ПОРТФОЛИО" ------------- */
 }
-
 /* ------------------------------------------------------ */
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
 /* ------------------------------------------------------ */
@@ -147,20 +141,15 @@ li,
 /* END "Обнуление" */
 
 /* Главная */
+.💪 {
+  display: flex;
+}
 
 body {
-  font-family: Roboto;
+  font-family: var(--font-family-body);
   color: var(--color-text-primary);
   background-color: var(--color-white);
-  margin: 0 auto;
 }
-
-/* .studio-body {
-  max-height: 2349px;
-}
-.portfolio-body {
-  max-height: 1880px;
-} */
 
 .container {
   max-width: var(--max-width-container);
@@ -187,14 +176,12 @@ body {
   color: var(--color-text-primary); /* Primary text color #212121 */
 }
 
-.nobullets {
+.list {
   list-style: none;
 }
 
 .image {
   display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .links {
@@ -207,6 +194,7 @@ body {
 .btn {
   padding: 6px 22px;
   min-height: 38px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 162%; /* identical to box height, or 162% */
@@ -244,7 +232,6 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
                                + header-contacts-container > (header-contacts-list) */
 
 .page-header {
-  min-height: var(--min-height-header);
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -261,13 +248,10 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .header-container {
-  display: flex;
   align-items: center;
-  min-height: 31px;
 }
 
 .header-nav {
-  display: flex;
   align-items: center;
 }
 
@@ -285,8 +269,6 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
-
-  min-width: 145px;
 
   padding: var(--padding-logo);
 
@@ -318,18 +300,12 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* START "Главная навигация сайта" */
 .nav-menu {
-  display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
-
-  min-width: var(--min-width-nav-menu);
-  min-height: 16px;
   color: var(--color-text-primary);
 }
 
-.nav-menu-item {
-  min-height: 16px;
-}
+/* .nav-menu-item { } */
 
 .nav-menu-item:not(:last-child) {
   margin-right: var(--margin-right-nav-menu-item);
@@ -339,21 +315,17 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .nav-link,
 .header-contacts {
   position: relative;
-  min-height: 16px;
   padding-top: 7px;
   padding-bottom: 8px;
 
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
   white-space: nowrap;
-
-  /* Студия    width: 49px; Портфолио width: 77px; Контакты  width: 68px; */
 }
 
+/* Студия, Портфолио, Контакты */
 .nav-link {
   color: var(--color-text-primary);
 }
@@ -378,16 +350,11 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* START "Шапка сайта - Контакты" */
 .header-contacts-container {
-  min-width: var(--min-width-header-contacts-container);
-  margin-left: auto;
-  /* info@devstudio.com */ /* width: 135px; */
-  /* +38 096 111 11 11  */ /* width: 122px; */
+  margin-left: auto; /* info@devstudio.com, +38 096 111 11 11 */
 }
 
 .header-contacts-list {
-  display: flex;
-  min-width: 307px;
-  min-height: 16px;
+  flex-flow: row wrap;
 }
 
 .header-contacts-list-item:not(:last-child) {
@@ -433,7 +400,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   padding: 0 !important; /* Нет внутренних отступов. Не влияет. */
   border: 0 !important; /* Нет границы. Не влияет. */
   margin: 0 !important; /* Нет внешних отступов. Не влияет. */
-  outline-width: 0 !important; /* Нет рамки вокруг. Не влияет. */
+  outline: none !important; /* Нет рамки вокруг. Не влияет. */
   outline-offset: 0 !important; /* Нет сдвига рамки вокруг. Не влияет. */
 }
 /* END "СКРЫТЫЙ КЛАСС" */
@@ -458,33 +425,18 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 /* || ------------------ START "ГЕРОЙ" ------------------ */
 /* ------------------------------------------------------ */
 .hero {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 600px;
   background-color: var(--color-bg-hero); /* 2F303A */
 }
 
-/* .main-container > .hero {
-} */
-
 .hero-container {
-  display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-width: 696px;
-  min-height: 200px;
 }
 
 /* Эффективные решения для вашего бизнеса */
 .hero-container > .hero-title {
-  min-width: 696px;
-  min-height: 120px;
-
-  margin-bottom: var(--margin-bottom-hero-title);
+  margin-bottom: var(--margin-bottom-30px);
 
   /* Наследует от body: font-family: Roboto; */
   /* Наследует от браузера: font-style: normal; */
@@ -538,33 +490,25 @@ main > .features {
 }
 
 /* Особенности */
-.features-container {
-  min-height: 101px;
-}
+/* .features-container { } */
 
 .features-list {
-  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  min-width: 1170px;
-  min-height: 101px;
+  align-items: center;
+  margin-top: calc(-1 * var(--flex-card-margin));
+  margin-left: calc(-1 * var(--flex-card-margin));
 }
 
 .features-list-item {
-  min-width: 270px;
-  min-height: 101px;
-}
-
-.features-list-item:not(:nth-child(4n-4)) {
-  margin-right: var(--margin-right-features-list-item);
+  flex-basis: calc(100% / var(--flex-features-card-qty) - var(--flex-card-margin));
+  margin-top: var(--flex-card-margin);
+  margin-left: var(--flex-card-margin);
 }
 
 /* Внимание к деталям, Пунктуальность, Планирование, Современные технологии */
 .features-heading {
-  min-width: 270px;
-  min-height: 16px;
-
   margin-bottom: var(--margin-bottom-features-heading);
-
   line-height: 16px;
   font-size: 14px;
   letter-spacing: 0.03em;
@@ -595,35 +539,27 @@ main > .features {
 /* ------------------------------------------------------ */
 /* || ------------ START "ЧЕМ МЫ ЗАНИМАЕМСЯ" ------------ */
 /* ------------------------------------------------------ */
-.activities {
-  min-height: 386px;
-}
-
-/* Чем мы занимаемся */
-.activities-container {
-  margin: 0 auto;
-}
+/* .activities { } */
+/* .activities-container { } */
 
 main > .activities {
   padding-top: 47px;
 }
 
 .activities-list {
-  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  min-width: 1170px;
-  min-height: 386px;
+  align-items: center;
+  margin-top: calc(-1 * var(--flex-card-margin));
+  margin-left: calc(-1 * var(--flex-card-margin));
 }
 
-.activities-list-item:not(:nth-child(3n-3)) {
-  margin-right: var(--margin-right-activities-list-item);
+.activities-list-item {
+  flex-basis: calc(100% / var(--flex-activities-card-qty) - var(--flex-card-margin));
+  margin-top: var(--flex-card-margin);
+  margin-left: var(--flex-card-margin);
 }
-
-/* Чем мы занимаемся */
-.activities-title {
-  min-width: 376px;
-  min-height: 42px;
-}
+/* .activities-title { } */
 /* ------------------------------------------------------ */
 /* || ------------- END "ЧЕМ МЫ ЗАНИМАЕМСЯ" ------------- */
 /* ------------------------------------------------------ */
@@ -632,39 +568,29 @@ main > .activities {
 /* || ------------- START "НАША КОМАНДА" ---------------- */
 /* ------------------------------------------------------ */
 .designers {
-  min-height: 648px;
   background-color: var(--color-bg-section-grey);
 }
 
-.designers-container {
-  min-height: 460px;
-  margin: 0 auto;
-}
-
-/* Наша команда */
-.designers-title {
-  min-width: 264px;
-  min-height: 42px;
-}
+/* .designers-container { } */
+/* .designers-title { } */
 
 /* team */
 .designers-list {
-  min-width: 1170px;
-  min-height: 368px;
-  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
+  margin-top: calc(-1 * var(--flex-card-margin));
+  margin-left: calc(-1 * var(--flex-card-margin));
 }
 
 /* team card 1-4 or "designers card" */
-.designers-list > .designers-list-item {
-  display: block;
-  min-width: 270px;
-  min-height: 368px;
+.designers-list-item {
+  flex-basis: calc(100% / var(--flex-designers-card-qty) - var(--flex-card-margin));
+  margin-top: var(--flex-card-margin);
+  margin-left: var(--flex-card-margin);
 }
 
 .designers-card {
-  min-width: 270px;
-
   border-radius: 0 0 4px 4px;
   background-color: var(--color-white); /* card bg */
 
@@ -672,22 +598,8 @@ main > .activities {
   box-shadow: var(--box-shadow-designers-card);
 }
 
-.designers-list-item:not(:nth-child(4n - 4)) {
-  margin-right: var(--margin-right-designers-list-item);
-}
-
 .designers-card-title {
-  min-height: 108px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   padding: var(--padding-designers-card-title);
-}
-
-.designers-photo {
-  margin-bottom: var(--margin-bottom-designers-photo);
 }
 
 .designers-name {
@@ -729,39 +641,24 @@ main > .activities {
 /* || -------------- START "ПОДВАЛ САЙТА" --------------- */
 /* ------------------------------------------------------ */
 .page-footer {
-  min-height: var(--min-height-footer);
   padding: 60px 0;
   background-color: var(--color-bg-hero);
 }
 
 .footer-container {
-  display: flex;
   flex-flow: row nowrap;
   align-items: baseline;
-  max-height: 132px;
 }
 
-.footer-address-wrapper {
-  min-width: 231px;
-  min-height: 132px;
-}
+/* .footer-address-wrapper { } */
 
 .footer-address {
   font-style: inherit;
-  min-width: 231px;
-  min-height: 81px;
   margin-top: var(--margin-top-footer-address);
 }
 
-.footer-address-list {
-  min-width: 231px;
-  min-height: 81px;
-}
-
-.footer-address-list-item {
-  min-width: 231px;
-  min-height: 21px;
-}
+/* .footer-address-list { } */
+/* .footer-address-list-item { } */
 
 .footer-address-list-item:not(:last-child) {
   margin-bottom: var(--margin-bottom-footer-address-list-item);
@@ -770,7 +667,7 @@ main > .activities {
 /* г. Киев, пр-т Леси Украинки, 26, info@example.com, +38 099 111 11 11 */
 .footer-map-pointer,
 .footer-contacts {
-  min-height: 21px;
+  max-height: 21px;
 }
 
 /* г. Киев, пр-т Леси Украинки, 26 */
@@ -784,15 +681,10 @@ main > .activities {
 }
 
 .footer-social-container {
-  display: flex;
   padding-left: var(--padding-left-footer-social-container);
 }
 
-.footer-social-list {
-  display: flex;
-  min-width: var(--min-width-footer-social-list);
-  min-height: 21px;
-}
+/* .footer-social-list {} */
 
 .footer-social-list-item:not(:last-child) {
   margin-right: var(--margin-right-footer-social-list-item);
@@ -809,7 +701,6 @@ main > .activities {
 /* ------------------------------------------------------ */
 .portfolio-filters {
   white-space: nowrap;
-  display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
@@ -817,7 +708,6 @@ main > .activities {
 }
 
 .portfolio-filters-list {
-  display: flex;
   justify-content: center;
 }
 
@@ -848,44 +738,25 @@ main > .activities {
 /* || --- START "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" -- */
 /* ------------------------------------------------------ */
 .portfolio-list {
-  display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  min-width: 1170px;
-  max-width: 1170px;
-  min-height: 1272px;
-  max-height: 1272px;
+
+  margin-top: calc(-1 * var(--flex-card-margin));
+  margin-left: calc(-1 * var(--flex-card-margin));
   outline: 1px solid tomato;
-
-  margin-bottom: calc(-1 * var(--margin-bottom-portfolio-card));
-  margin-right: calc(-1 * var(--margin-right-portfolio-card));
-
-  overflow: auto;
 }
 
 /* project 4 */
-.portfolio-list > .portfolio-list-item {
-  outline: 1px solid teal;
-
+.portfolio-list-item {
   flex-basis: var(--flex-basis-portfolio-card);
-
-  min-height: var(--min-height-portfolio-card);
-  margin-bottom: var(--margin-bottom-portfolio-card);
+  margin: var(--flex-margins-top-and-left);
   background-color: var(--color-white);
-
-  margin-top: var(--margin-bottom-portfolio-card);
-  margin-left: var(--margin-right-portfolio-card);
-}
-
-.portfolio-list-item:not(:nth-child(3n-3)) {
-  margin-right: var(--margin-right-portfolio-card);
+  outline: 1px solid teal;
 }
 
 /* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business" */
 .portfolio-projects-name {
-  min-width: 322px;
-  min-height: 36px;
   font-size: 18px;
   line-height: 200%; /* identical to box height, 36px or 200% */
   letter-spacing: 0.06em;
@@ -970,12 +841,11 @@ main > .activities {
   border-radius: 21px;
 }
 
-.modal-form-head {
+/* .contact-form-head {
   font-size: 14px;
-}
+} */
 
-.modal-form {
-  display: flex;
+.contact-form {
   flex-flow: column nowrap;
   position: absolute;
 }
@@ -985,7 +855,6 @@ main > .activities {
 }
 
 .modal-close-btn-container {
-  display: flex;
   justify-content: flex-end;
   min-width: 100%;
   min-height: fit-content;
@@ -1002,7 +871,6 @@ main > .activities {
 }
 
 .form-btn-container {
-  display: flex;
   justify-content: flex-end;
 }
 
@@ -1019,5 +887,11 @@ main > .activities {
   HTML 58.1%
   CSS 41.0%
   JavaScript 0.9%
-  file-lines-css: 908;
+  file-lines-css: 898;
 } */
+
+/* START Code reduction */
+.hero-container > .hero-title {
+  font-size: clamp(1rem, 4.5vw, 44px);
+}
+/* END Code reduction */
