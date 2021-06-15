@@ -23,27 +23,30 @@
   <body class="studio-body">
     <!-- Шапка сайта 2021-Jun-11 01:59 AM -->
     <header class="page-header">
+      <!-- Пропустить к Основному Контенту для скрин-ридеров -->
+      <div class="skip-to-content">
+        <a class="skip-link" href="#maincontent">skip to main content</a>
+      </div>
+
       <div class="header-container container 💪">
         <nav class="header-nav 💪">
           <div class="logo-container">
-            <a class="logo links" href="./" hreflang="ru">
-              <span class="webstudio accent" lang="en">Web</span
-              ><span class="webstudio black" lang="en">Studio</span>
+            <a class="logo links" href="./" hreflang="ru" lang="en">
+              <span class="webstudio accent">Web</span>
+              <span class="webstudio black">Studio</span>
             </a>
           </div>
 
-          <ul class="nav-menu list 💪">
-            <li class="nav-menu-item">
-              <a class="nav-link links" href="./index.html" hreflang="ru" aria-current="page"
-                >Студия</a
-              >
+          <ul class="nav-menu list 💪" role="menu">
+            <li class="nav-menu-item" role="menuitem">
+              <a class="nav-link links" href="./" hreflang="ru" aria-current="page">Студия</a>
             </li>
 
-            <li class="nav-menu-item">
+            <li class="nav-menu-item" role="menuitem">
               <a class="nav-link links" href="./portfolio.html" hreflang="ru">Портфолио</a>
             </li>
 
-            <li class="nav-menu-item">
+            <li class="nav-menu-item" role="menuitem">
               <a class="nav-link links" href="#">Контакты</a>
             </li>
           </ul>
@@ -68,7 +71,7 @@
       <!-- Герой -->
       <section class="hero section">
         <div class="hero-container container 💪">
-          <div class="hero-title-container 💪">
+          <div class="hero-title-container 💪" id="maincontent">
             <h1 class="hero-title">
               Эффективные решения <br class="hero-title-br" />
               для вашего бизнеса
@@ -84,7 +87,7 @@
       <!-- "Особенности", со скрытым заголовком h2 -->
       <section class="features section">
         <div class="features-container container">
-          <h2 class="is-hidden">Особенности</h2>
+          <h2 class="sr-only">Особенности</h2>
           <ul class="features-list list 💪">
             <li class="features-list-item">
               <h3 class="features-heading">Внимание к деталям</h3>
@@ -234,9 +237,8 @@
     <footer class="page-footer">
       <div class="footer-container container 💪">
         <div class="footer-address-wrapper">
-          <a class="logo links" href="./index.html">
-            <span class="webstudio accent" lang="en">Web</span
-            ><span class="webstudio white" lang="en">Studio</span>
+          <a class="logo links" href="./" lang="en">
+            <span class="webstudio accent">Web</span><span class="webstudio white">Studio</span>
           </a>
           <address class="footer-address">
             <ul class="footer-address-list list">

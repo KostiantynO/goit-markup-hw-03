@@ -16,6 +16,7 @@
   --font-family-body: Roboto, "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
 
   /* || ----------------- START "ПАЛИТРА" ----------------- */
+  --color-bg-skip-to-content: #bf1722;
   --color-text-primary: #212121; /* Основной цвет текста #212121 (nav-link, h2, h3, filters-btn) */
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
   --color-accent: #2196f3; /* Акцент #2196F3 */
@@ -148,6 +149,34 @@ body {
   background-color: var(--color-white);
 }
 
+.skip-to-content > .skip-link {
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  color: var(--color-white);
+  border-right: 1px solid var(--color-white);
+  border-bottom: 1px solid var(--color-white);
+  border-bottom-right-radius: 8px;
+  background-color: var(--color-bg-skip-to-content);
+  -webkit-transition: top 1s ease-out;
+  -moz-transition: top 1s ease-out;
+  -o-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 100;
+}
+
+.skip-to-content > .skip-link:focus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  outline-color: transparent;
+  -webkit-transition: top 0.1s ease-in;
+  -moz-transition: top 0.1s ease-in;
+  -o-transition: top 0.1s ease-in;
+  transition: top 0.1s ease-in;
+}
+
 .container {
   max-width: var(--max-width-container);
   min-width: var(--min-width-activity-image); /* Мин. ширина картинки активности */
@@ -193,6 +222,8 @@ body {
 .btn {
   padding: 6px 22px;
   min-height: 38px;
+
+  display: inline-block;
 
   font-weight: 500;
   font-size: 16px;
@@ -332,7 +363,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   color: var(--color-text-primary);
 }
 
-.nav-link[aria-current*="page"]::after {
+.nav-link[aria-current="page"]::after {
   content: "";
   position: absolute;
   top: 52px;
@@ -373,43 +404,91 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
  *
 */
 
-/* START "СКРЫТЫЙ КЛАСС"
- * "Модальное окно скрыто до момента нажатия на кнопку-героя"
-*/
-.is-hidden {
-  /* MUST HAVE */
-  visibility: hidden !important; /* Не выделяется ни мышкой, ни табом. Контент прозрачный. Блок в потоке. */
+.sr-only {
   pointer-events: none !important; /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
+
+  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
+  Тогда контент не выделяется табом.  Контент видно, выделяется мышкой. Блок в потоке. */
 
   /* Useful */
   clip-path: inset(100%); /* Вырезает контент. Блок в потоке. */
   clip: rect(1px 1px 1px 1px); /* Старая функция IE6, IE7, вырезает контент. Блок в потоке. */
   clip: rect(1px, 1px, 1px, 1px); /* Старая функция, вырезает контент. Блок в потоке. */
 
-  overflow: hidden !important; /* Обрезает контент. Блочный контейнер должен иметь высоту или максвысоту, или white-space: nowrap. */
-  height: 0 !important; /* Высота блока <= 1 px. Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
-  width: 0 !important; /* Ширина блока <= 1px. Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  overflow: hidden !important; /* Обрезает контент если Блочный контейнер имеет высоту\максвысоту, или white-space: nowrap. */
 
-  font-size: 0 !important; /* Высота шрифта <= 1px.Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
-  line-height: 0 !important; /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
+  * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.
+  * All these techniques may result in search engine penalties as they may be interpreted as malicious. */
+
+  height: 1px !important; /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  width: 1px !important; /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+
+  font-size: 1px !important; /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  line-height: 1px !important; /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
 
   /* only visual effect */
   opacity: 0 !important; /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
 
   /* small importance */
   position: absolute !important; /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
+  left: -10000px;
+  top: auto;
   white-space: nowrap !important; /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
   padding: 0 !important; /* Нет внутренних отступов. Не влияет. */
-  border: 0 !important; /* Нет границы. Не влияет. */
-  margin: 0 !important; /* Нет внешних отступов. Не влияет. */
+  border: 0 !important; /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
+  margin: -1px !important; /* Нет внешних отступов. Не влияет. */
   outline: none !important; /* Нет рамки вокруг. Не влияет. */
   outline-offset: 0 !important; /* Нет сдвига рамки вокруг. Не влияет. */
 }
-/* END "СКРЫТЫЙ КЛАСС" */
+
+/* START "СКРЫТЫЕ КЛАССЫ"
+* "Модальное окно скрыто и недоступно для скрин-ридеров до момента нажатия на кнопку-героя"
+*/
+.is-hidden {
+  /* MUST HAVE */
+  visibility: hidden !important; /* НЕ ДОСТУПЕН ДЛЯ ЧИТАЛОК. Не выделяется ни мышкой, ни табом. Контент прозрачный. Блок в потоке. */
+  pointer-events: none !important; /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
+
+  /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
+  Тогда контент не выделяется табом.  Контент видно, выделяется мышкой. Блок в потоке. */
+
+  /* Useful */
+  clip-path: inset(100%); /* Вырезает контент. Блок в потоке. */
+  clip: rect(1px 1px 1px 1px); /* Старая функция IE6, IE7, вырезает контент. Блок в потоке. */
+  clip: rect(1px, 1px, 1px, 1px); /* Старая функция, вырезает контент. Блок в потоке. */
+
+  overflow: hidden !important; /* Обрезает контент если Блочный контейнер имеет высоту\максвысоту, или white-space: nowrap. */
+
+  /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
+  * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.
+  * All these techniques may result in search engine penalties as they may be interpreted as malicious. */
+
+  height: 1px !important; /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  width: 1px !important; /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+
+  font-size: 1px !important; /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  line-height: 1px !important; /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+
+  /* only visual effect */
+  opacity: 0 !important; /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
+
+  /* small importance */
+  position: absolute !important; /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
+  left: -10000px;
+  top: auto;
+  white-space: nowrap !important; /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
+  padding: 0 !important; /* Нет внутренних отступов. Не влияет. */
+  border: 0 !important; /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
+  margin: -1px !important; /* Нет внешних отступов. Не влияет. */
+  outline: none !important; /* Нет рамки вокруг. Не влияет. */
+  outline-offset: 0 !important; /* Нет сдвига рамки вокруг. Не влияет. */
+}
+/* END "СКРЫТЫЕ КЛАССЫ" */
 
 /* START Подсветка ссылок */
 .accent,
-[aria-current],
+[aria-current="page"],
 .links:hover,
 .links:focus,
 .links:active,
@@ -743,7 +822,10 @@ main > .activities {
 }
 
 /* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
+
 /* Вторичная кнопка по наведению: фон - акцент, текст белый + тень (динамическая) */
+.current,
+.btn--secondary[aria-current="true"],
 .btn--secondary:hover,
 .btn--secondary:focus,
 .btn--secondary:active {
@@ -777,9 +859,18 @@ main > .activities {
   background-color: var(--color-white);
 }
 
+.project-title {
+  padding: 20px 23px 19px 23px;
+  border-right: 1px solid var(--color-bg-project-card);
+  border-bottom: 1px solid var(--color-bg-project-card);
+  border-left: 1px solid var(--color-bg-project-card);
+}
+
 /* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business" */
 .portfolio-project-name {
   min-height: calc(6px + var(--breakpoint-mr));
+  margin-bottom: 4px;
+
   font-size: 18px;
   line-height: 200%; /* identical to box height, 36px or 200% */
   letter-spacing: 0.06em;
@@ -794,14 +885,9 @@ main > .activities {
   min-height: var(--breakpoint-mr);
   font-size: 16px;
   line-height: 187%;
+  color: var(--color-text-secondary);
 }
 
-.project-title {
-  padding: 20px 24px;
-  border-right: 1px solid var(--color-bg-project-card);
-  border-bottom: 1px solid var(--color-bg-project-card);
-  border-left: 1px solid var(--color-bg-project-card);
-}
 /* ------------------------------------------------------ */
 /* || --- END "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" ---- */
 /* ------------------------------------------------------ */

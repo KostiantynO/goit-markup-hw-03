@@ -23,27 +23,32 @@
   <body class="portfolio-body">
     <!-- Шапка сайта 2021-Jun-13 22:20 PM -->
     <header class="page-header">
+      <!-- Пропустить к Основному Контенту для скрин-ридеров -->
+      <div class="skip-to-content">
+        <a class="skip-link" href="#maincontent">skip to main content</a>
+      </div>
+
       <div class="header-container container 💪">
         <nav class="header-nav 💪">
           <div class="logo-container">
-            <a class="logo links" href="./" hreflang="ru">
-              <span class="webstudio accent" lang="en">Web</span
-              ><span class="webstudio black" lang="en">Studio</span>
+            <a class="logo links" href="./" hreflang="ru" lang="en">
+              <span class="webstudio accent">Web</span>
+              <span class="webstudio black">Studio</span>
             </a>
           </div>
 
-          <ul class="nav-menu list 💪">
-            <li class="nav-menu-item">
-              <a class="nav-link links" href="./index.html" hreflang="ru">Студия</a>
+          <ul class="nav-menu list 💪" role="menu">
+            <li class="nav-menu-item" role="menuitem">
+              <a class="nav-link links" href="./" hreflang="ru">Студия</a>
             </li>
 
-            <li class="nav-menu-item">
+            <li class="nav-menu-item" role="menuitem">
               <a class="nav-link links" href="./portfolio.html" hreflang="ru" aria-current="page"
                 >Портфолио</a
               >
             </li>
 
-            <li class="nav-menu-item">
+            <li class="nav-menu-item" role="menuitem">
               <a class="nav-link links" href="#">Контакты</a>
             </li>
           </ul>
@@ -67,168 +72,203 @@
     <main>
       <!-- Портфолио -->
       <section class="portfolio section">
-        <div class="portfolio-container container">
-          <h1 class="is-hidden">Примеры работ</h1>
+        <div class="portfolio-container container" id="maincontent">
+          <h1 class="sr-only">Примеры работ</h1>
 
           <!-- Фильтры-кнопки -->
           <div class="portfolio-filters 💪">
-            <h2 class="is-hidden">Фильтры-кнопки по типу проекта</h2>
-            <ul class="portfolio-filters-list list 💪">
+            <h2 class="sr-only">Фильтры-кнопки по типу проекта</h2>
+
+            <ul class="portfolio-filters-list list 💪" role="radiogroup">
               <li class="portfolio-filter-list-item">
-                <button class="btn btn--primary" type="button">Все</button>
+                <button
+                  class="btn btn--secondary current filter-btn"
+                  id="filter-1"
+                  type="button"
+                  aria-current="true"
+                >
+                  Все
+                </button>
               </li>
 
               <li class="portfolio-filter-list-item">
-                <button class="btn btn--secondary" type="button">Веб-сайты</button>
+                <button class="btn btn--secondary filter-btn" id="filter-2" type="button">
+                  Веб-сайты
+                </button>
               </li>
 
               <li class="portfolio-filter-list-item">
-                <button class="btn btn--secondary" type="button">Приложения</button>
+                <button class="btn btn--secondary filter-btn" id="filter-3" type="button">
+                  Приложения
+                </button>
               </li>
 
               <li class="portfolio-filter-list-item">
-                <button class="btn btn--secondary" type="button">Дизайн</button>
+                <button class="btn btn--secondary filter-btn" id="filter-4" type="button">
+                  Дизайн
+                </button>
               </li>
 
               <li class="portfolio-filter-list-item">
-                <button class="btn btn--secondary" type="button">Маркетинг</button>
+                <button class="btn btn--secondary filter-btn" id="filter-5" type="button">
+                  Маркетинг
+                </button>
               </li>
             </ul>
           </div>
+
           <!-- Список карточек проектов -->
           <div class="portfolio-projects">
-            <h2 class="is-hidden">Список карточек проектов</h2>
+            <h2 class="sr-only">Список карточек проектов</h2>
             <ul class="portfolio-list list 💪">
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-1.jpg"
-                  alt="Веб-страница о команде веб-сайта на экране MacBook Pro"
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">Технокряк</h3>
-                  <p class="portfolio-project-type">Веб-сайт</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-1.jpg"
+                    alt="Веб-страница о команде веб-сайта на экране MacBook Pro"
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">Технокряк</h3>
+                    <p class="portfolio-project-type">Веб-сайт</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-2.jpg"
-                  alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">
-                    Постер <span lang="en">New Orlean vs Golden Star</span>
-                  </h3>
-                  <p class="portfolio-project-type">Дизайн</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-2.jpg"
+                    alt="Баскетболист Golden Star блокирует бросок игрока New Orlean"
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">
+                      Постер <span lang="en">New Orlean vs Golden Star</span>
+                    </h3>
+                    <p class="portfolio-project-type">Дизайн</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-3.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">Ресторан <span lang="en">Seafood</span></h3>
-                  <p class="portfolio-project-type">Приложение</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-3.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">Ресторан <span lang="en">Seafood</span></h3>
+                    <p class="portfolio-project-type">Приложение</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-4.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">Проект <span lang="en">Prime</span></h3>
-                  <p class="portfolio-project-type">Маркетинг</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-4.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">Проект <span lang="en">Prime</span></h3>
+                    <p class="portfolio-project-type">Маркетинг</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-5.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">Проект <span lang="en">Boxes</span></h3>
-                  <p class="portfolio-project-type">Приложение</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-5.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">Проект <span lang="en">Boxes</span></h3>
+                    <p class="portfolio-project-type">Приложение</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-6.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">
-                    <span lang="en">Inspiration has no Borders</span>
-                  </h3>
-                  <p class="portfolio-project-type">Веб-сайт</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-6.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">
+                      <span lang="en">Inspiration has no Borders</span>
+                    </h3>
+                    <p class="portfolio-project-type">Веб-сайт</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-7.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">
-                    Издание <span lang="en">Limited Edition</span>
-                  </h3>
-                  <p class="portfolio-project-type">Дизайн</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-7.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">
+                      Издание <span lang="en">Limited Edition</span>
+                    </h3>
+                    <p class="portfolio-project-type">Дизайн</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-8.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name">Проект <span lang="en">LAB</span></h3>
-                  <p class="portfolio-project-type">Маркетинг</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-8.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name">Проект <span lang="en">LAB</span></h3>
+                    <p class="portfolio-project-type">Маркетинг</p>
+                  </div>
+                </a>
               </li>
 
               <li class="portfolio-list-item">
-                <img
-                  class="image"
-                  src="./images/squooshed/portfolio/project-9.jpg"
-                  alt=""
-                  width="370"
-                  height="294"
-                />
-                <div class="project-title">
-                  <h3 class="portfolio-project-name"><span lang="en">Growing Business</span></h3>
-                  <p class="portfolio-project-type">Приложение</p>
-                </div>
+                <a class="portfolio-project-link links" href="#0">
+                  <img
+                    class="image"
+                    src="./images/squooshed/portfolio/project-9.jpg"
+                    alt=""
+                    width="370"
+                    height="294"
+                  />
+                  <div class="project-title">
+                    <h3 class="portfolio-project-name"><span lang="en">Growing Business</span></h3>
+                    <p class="portfolio-project-type">Приложение</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>
@@ -240,9 +280,9 @@
     <footer class="page-footer">
       <div class="footer-container container 💪">
         <div class="footer-address-wrapper">
-          <a class="logo links" href="./index.html">
-            <span class="webstudio accent" lang="en">Web</span
-            ><span class="webstudio white" lang="en">Studio</span>
+          <a class="logo links" href="./" hreflang="ru" lang="en">
+            <span class="webstudio accent">Web</span>
+            <span class="webstudio white">Studio</span>
           </a>
           <address class="footer-address">
             <ul class="footer-address-list list">
