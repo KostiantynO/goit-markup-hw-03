@@ -1,19 +1,8 @@
-/* Позиционирование */
-/* ...; */
-/* Блочная модель */
-/* ...; */
-/* Типографика */
-/* ...;  */
-/* Отображение */
-/* ...; */
-/* Прочее */
-/* ...; */
-
 /* ------------------------------------------------------ */
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
 :root {
-  --font-family-body: Roboto, "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --font-family-sans-serif: Roboto, "Open Sans", Arial, Helvetica, sans-serif;
 
   /* || ----------------- START "ПАЛИТРА" ----------------- */
   --color-bg-skip-to-content: #bf1722;
@@ -68,13 +57,13 @@
   --margin-right-nav-menu-item: 50px; /* Правый отступ между ссылками Главной навигации */
 
   /* Хедер-Контакты */
-  --margin-right-header-contacts-list-item: 50px; /* Правый отступ между ссылками Контактов */
+  --margin-right-header-contact-list-item: 50px; /* Правый отступ между ссылками Контактов */
 
   /* Герой */
 
   /* Особенности */
   --flex-features-card-qty: 4; /* Кол-во карточек Особенностей на одной линии. */
-  --margin-bottom-features-heading: 10px; /* Нижний отступ между Оглавлением h3 и параграфом */
+  --margin-bottom-feature-heading: 10px; /* Нижний отступ между Оглавлением h3 и параграфом */
 
   /* "Чем мы занимаемся" */
   --flex-activities-card-qty: 3; /* Кол-во карточек Активностей на одной линии. */
@@ -144,7 +133,7 @@ li,
 }
 
 body {
-  font-family: var(--font-family-body);
+  font-family: var(--font-family-sans-serif);
   color: var(--color-text-primary);
   background-color: var(--color-white);
 }
@@ -206,6 +195,10 @@ body {
 
 .list {
   list-style: none;
+}
+
+.list:empty::after {
+  content: attr(data-placeholder);
 }
 
 .image {
@@ -390,8 +383,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   flex-flow: row wrap;
 }
 
-.header-contacts-list-item:not(:last-child) {
-  margin-right: var(--margin-right-header-contacts-list-item);
+.header-contact-list-item:not(:last-child) {
+  margin-right: var(--margin-right-header-contact-list-item);
 }
 
 .header-contacts {
@@ -598,15 +591,15 @@ main > .features {
   margin-left: calc(-1 * var(--breakpoint-mr));
 }
 
-.features-list-item {
+.feature-list-item {
   flex-basis: calc(100% / var(--flex-features-card-qty) - var(--breakpoint-mr));
   margin-top: var(--breakpoint-mr);
   margin-left: var(--breakpoint-mr);
 }
 
 /* Внимание к деталям, Пунктуальность, Планирование, Современные технологии */
-.features-heading {
-  margin-bottom: var(--margin-bottom-features-heading);
+.feature-heading {
+  margin-bottom: var(--margin-bottom-feature-heading);
   line-height: 16px;
   font-size: 14px;
   letter-spacing: 0.03em;
@@ -614,12 +607,12 @@ main > .features {
   color: var(--color-text-primary);
 }
 
-.features-paragraph {
+.feature-paragraph {
   min-width: 270px;
   min-height: 75px;
 }
 
-/* В параграфе ".features-paragraph" и в ".footer-contacts" - одинаковый шрифт, разный цвет */
+/* В параграфе ".feature-paragraph" и в ".footer-contacts" - одинаковый шрифт, разный цвет */
 
 /* Идейные соображения, а также начало повседневной работы по формированию позиции. */
 .secondary-text-font {
@@ -652,7 +645,7 @@ main > .activities {
   margin-left: calc(-1 * var(--breakpoint-mr));
 }
 
-.activities-list-item {
+.activity-list-item {
   flex-basis: calc(100% / var(--flex-activities-card-qty) - var(--breakpoint-mr));
   margin-top: var(--breakpoint-mr);
   margin-left: var(--breakpoint-mr);
@@ -987,11 +980,22 @@ main > .activities {
 /* || ------------------ END "МОДАЛКА" ------------------ */
 /* ------------------------------------------------------ */
 
-/* .stats-languages {
-  homework-name: "hw-03-flexbox";
-  date: "2021-Jun-06 18:09";
-  HTML 58.1%
-  CSS 41.0%
-  JavaScript 0.9%
-  file-lines-css: 898;
+/* Позиционирование */
+/* ...; */
+/* Блочная модель */
+/* ...; */
+/* Типографика */
+/* ...;  */
+/* Отображение */
+/* ...; */
+/* Прочее */
+/* ...; */
+
+/* .project-stats-languages {
+  --homework-name: "hw-03-flexbox";
+  --date: "2021-Jun-15 18:55";
+  --CSS: 53.4%;
+  --HTML: 46.0%;
+  --JavaScript: 0.6%;
+  --file-lines-css: 1002;
 } */
